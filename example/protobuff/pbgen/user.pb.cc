@@ -20,7 +20,7 @@ PROTOBUF_PRAGMA_INIT_SEG
 namespace _pb = ::PROTOBUF_NAMESPACE_ID;
 namespace _pbi = _pb::internal;
 
-namespace test_pkg {
+namespace user_pkg {
 PROTOBUF_CONSTEXPR ResponseStatus::ResponseStatus(
     ::_pbi::ConstantInitialized)
   : message_(&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{})
@@ -103,100 +103,100 @@ struct GetFriendListResponseDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 GetFriendListResponseDefaultTypeInternal _GetFriendListResponse_default_instance_;
-}  // namespace test_pkg
+}  // namespace user_pkg
 static ::_pb::Metadata file_level_metadata_user_2eproto[6];
 static const ::_pb::EnumDescriptor* file_level_enum_descriptors_user_2eproto[1];
 static const ::_pb::ServiceDescriptor* file_level_service_descriptors_user_2eproto[1];
 
 const uint32_t TableStruct_user_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::test_pkg::ResponseStatus, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::user_pkg::ResponseStatus, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::test_pkg::ResponseStatus, code_),
-  PROTOBUF_FIELD_OFFSET(::test_pkg::ResponseStatus, message_),
+  PROTOBUF_FIELD_OFFSET(::user_pkg::ResponseStatus, code_),
+  PROTOBUF_FIELD_OFFSET(::user_pkg::ResponseStatus, message_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::test_pkg::UserInfo, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::user_pkg::UserInfo, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::test_pkg::UserInfo, id_),
-  PROTOBUF_FIELD_OFFSET(::test_pkg::UserInfo, name_),
-  PROTOBUF_FIELD_OFFSET(::test_pkg::UserInfo, age_),
-  PROTOBUF_FIELD_OFFSET(::test_pkg::UserInfo, sex_),
+  PROTOBUF_FIELD_OFFSET(::user_pkg::UserInfo, id_),
+  PROTOBUF_FIELD_OFFSET(::user_pkg::UserInfo, name_),
+  PROTOBUF_FIELD_OFFSET(::user_pkg::UserInfo, age_),
+  PROTOBUF_FIELD_OFFSET(::user_pkg::UserInfo, sex_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::test_pkg::LoginRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::user_pkg::LoginRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::test_pkg::LoginRequest, uid_),
-  PROTOBUF_FIELD_OFFSET(::test_pkg::LoginRequest, password_),
+  PROTOBUF_FIELD_OFFSET(::user_pkg::LoginRequest, uid_),
+  PROTOBUF_FIELD_OFFSET(::user_pkg::LoginRequest, password_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::test_pkg::LoginResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::user_pkg::LoginResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::test_pkg::LoginResponse, status_),
-  PROTOBUF_FIELD_OFFSET(::test_pkg::LoginResponse, session_token_),
+  PROTOBUF_FIELD_OFFSET(::user_pkg::LoginResponse, status_),
+  PROTOBUF_FIELD_OFFSET(::user_pkg::LoginResponse, session_token_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::test_pkg::GetFriendListRequest, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::user_pkg::GetFriendListRequest, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::test_pkg::GetFriendListRequest, uid_),
-  PROTOBUF_FIELD_OFFSET(::test_pkg::GetFriendListRequest, page_),
-  PROTOBUF_FIELD_OFFSET(::test_pkg::GetFriendListRequest, page_size_),
+  PROTOBUF_FIELD_OFFSET(::user_pkg::GetFriendListRequest, uid_),
+  PROTOBUF_FIELD_OFFSET(::user_pkg::GetFriendListRequest, page_),
+  PROTOBUF_FIELD_OFFSET(::user_pkg::GetFriendListRequest, page_size_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::test_pkg::GetFriendListResponse, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::user_pkg::GetFriendListResponse, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::test_pkg::GetFriendListResponse, status_),
-  PROTOBUF_FIELD_OFFSET(::test_pkg::GetFriendListResponse, friends_),
+  PROTOBUF_FIELD_OFFSET(::user_pkg::GetFriendListResponse, status_),
+  PROTOBUF_FIELD_OFFSET(::user_pkg::GetFriendListResponse, friends_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, -1, sizeof(::test_pkg::ResponseStatus)},
-  { 8, -1, -1, sizeof(::test_pkg::UserInfo)},
-  { 18, -1, -1, sizeof(::test_pkg::LoginRequest)},
-  { 26, -1, -1, sizeof(::test_pkg::LoginResponse)},
-  { 34, -1, -1, sizeof(::test_pkg::GetFriendListRequest)},
-  { 43, -1, -1, sizeof(::test_pkg::GetFriendListResponse)},
+  { 0, -1, -1, sizeof(::user_pkg::ResponseStatus)},
+  { 8, -1, -1, sizeof(::user_pkg::UserInfo)},
+  { 18, -1, -1, sizeof(::user_pkg::LoginRequest)},
+  { 26, -1, -1, sizeof(::user_pkg::LoginResponse)},
+  { 34, -1, -1, sizeof(::user_pkg::GetFriendListRequest)},
+  { 43, -1, -1, sizeof(::user_pkg::GetFriendListResponse)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
-  &::test_pkg::_ResponseStatus_default_instance_._instance,
-  &::test_pkg::_UserInfo_default_instance_._instance,
-  &::test_pkg::_LoginRequest_default_instance_._instance,
-  &::test_pkg::_LoginResponse_default_instance_._instance,
-  &::test_pkg::_GetFriendListRequest_default_instance_._instance,
-  &::test_pkg::_GetFriendListResponse_default_instance_._instance,
+  &::user_pkg::_ResponseStatus_default_instance_._instance,
+  &::user_pkg::_UserInfo_default_instance_._instance,
+  &::user_pkg::_LoginRequest_default_instance_._instance,
+  &::user_pkg::_LoginResponse_default_instance_._instance,
+  &::user_pkg::_GetFriendListRequest_default_instance_._instance,
+  &::user_pkg::_GetFriendListResponse_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_user_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\nuser.proto\022\010test_pkg\"/\n\016ResponseStatus"
+  "\n\nuser.proto\022\010user_pkg\"/\n\016ResponseStatus"
   "\022\014\n\004code\030\001 \001(\005\022\017\n\007message\030\002 \001(\t\"\220\001\n\010User"
   "Info\022\n\n\002id\030\001 \001(\r\022\014\n\004name\030\002 \001(\t\022\013\n\003age\030\003 "
-  "\001(\r\022#\n\003sex\030\004 \001(\0162\026.test_pkg.UserInfo.Sex"
+  "\001(\r\022#\n\003sex\030\004 \001(\0162\026.user_pkg.UserInfo.Sex"
   "\"0\n\003Sex\022\023\n\017SEX_UNSPECIFIED\020\000\022\010\n\004MALE\020\001\022\n"
   "\n\006FEMALE\020\002J\006\010\350\007\020\320\017\"-\n\014LoginRequest\022\013\n\003ui"
   "d\030\001 \001(\r\022\020\n\010password\030\002 \001(\t\"P\n\rLoginRespon"
-  "se\022(\n\006status\030\001 \001(\0132\030.test_pkg.ResponseSt"
+  "se\022(\n\006status\030\001 \001(\0132\030.user_pkg.ResponseSt"
   "atus\022\025\n\rsession_token\030\002 \001(\t\"D\n\024GetFriend"
   "ListRequest\022\013\n\003uid\030\001 \001(\r\022\014\n\004page\030\002 \001(\r\022\021"
   "\n\tpage_size\030\003 \001(\r\"f\n\025GetFriendListRespon"
-  "se\022(\n\006status\030\001 \001(\0132\030.test_pkg.ResponseSt"
-  "atus\022#\n\007friends\030\002 \003(\0132\022.test_pkg.UserInf"
-  "o2\234\001\n\016UserServiceRpc\0228\n\005Login\022\026.test_pkg"
-  ".LoginRequest\032\027.test_pkg.LoginResponse\022P"
-  "\n\rGetFriendList\022\036.test_pkg.GetFriendList"
-  "Request\032\037.test_pkg.GetFriendListResponse"
+  "se\022(\n\006status\030\001 \001(\0132\030.user_pkg.ResponseSt"
+  "atus\022#\n\007friends\030\002 \003(\0132\022.user_pkg.UserInf"
+  "o2\234\001\n\016UserServiceRpc\0228\n\005Login\022\026.user_pkg"
+  ".LoginRequest\032\027.user_pkg.LoginResponse\022P"
+  "\n\rGetFriendList\022\036.user_pkg.GetFriendList"
+  "Request\032\037.user_pkg.GetFriendListResponse"
   "B\005H\001\200\001\001b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_user_2eproto_once;
@@ -214,7 +214,7 @@ PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_user_2ep
 
 // Force running AddDescriptors() at dynamic initialization time.
 PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_user_2eproto(&descriptor_table_user_2eproto);
-namespace test_pkg {
+namespace user_pkg {
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* UserInfo_Sex_descriptor() {
   ::PROTOBUF_NAMESPACE_ID::internal::AssignDescriptors(&descriptor_table_user_2eproto);
   return file_level_enum_descriptors_user_2eproto[0];
@@ -249,7 +249,7 @@ ResponseStatus::ResponseStatus(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(arena_constructor:test_pkg.ResponseStatus)
+  // @@protoc_insertion_point(arena_constructor:user_pkg.ResponseStatus)
 }
 ResponseStatus::ResponseStatus(const ResponseStatus& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -263,7 +263,7 @@ ResponseStatus::ResponseStatus(const ResponseStatus& from)
       GetArenaForAllocation());
   }
   code_ = from.code_;
-  // @@protoc_insertion_point(copy_constructor:test_pkg.ResponseStatus)
+  // @@protoc_insertion_point(copy_constructor:user_pkg.ResponseStatus)
 }
 
 inline void ResponseStatus::SharedCtor() {
@@ -275,7 +275,7 @@ code_ = 0;
 }
 
 ResponseStatus::~ResponseStatus() {
-  // @@protoc_insertion_point(destructor:test_pkg.ResponseStatus)
+  // @@protoc_insertion_point(destructor:user_pkg.ResponseStatus)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -293,7 +293,7 @@ void ResponseStatus::SetCachedSize(int size) const {
 }
 
 void ResponseStatus::Clear() {
-// @@protoc_insertion_point(message_clear_start:test_pkg.ResponseStatus)
+// @@protoc_insertion_point(message_clear_start:user_pkg.ResponseStatus)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -323,7 +323,7 @@ const char* ResponseStatus::_InternalParse(const char* ptr, ::_pbi::ParseContext
           auto str = _internal_mutable_message();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "test_pkg.ResponseStatus.message"));
+          CHK_(::_pbi::VerifyUTF8(str, "user_pkg.ResponseStatus.message"));
         } else
           goto handle_unusual;
         continue;
@@ -352,7 +352,7 @@ failure:
 
 uint8_t* ResponseStatus::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:test_pkg.ResponseStatus)
+  // @@protoc_insertion_point(serialize_to_array_start:user_pkg.ResponseStatus)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -367,7 +367,7 @@ uint8_t* ResponseStatus::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_message().data(), static_cast<int>(this->_internal_message().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "test_pkg.ResponseStatus.message");
+      "user_pkg.ResponseStatus.message");
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_message(), target);
   }
@@ -376,12 +376,12 @@ uint8_t* ResponseStatus::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:test_pkg.ResponseStatus)
+  // @@protoc_insertion_point(serialize_to_array_end:user_pkg.ResponseStatus)
   return target;
 }
 
 size_t ResponseStatus::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:test_pkg.ResponseStatus)
+// @@protoc_insertion_point(message_byte_size_start:user_pkg.ResponseStatus)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -417,7 +417,7 @@ void ResponseStatus::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
 
 
 void ResponseStatus::MergeFrom(const ResponseStatus& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:test_pkg.ResponseStatus)
+// @@protoc_insertion_point(class_specific_merge_from_start:user_pkg.ResponseStatus)
   GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -432,7 +432,7 @@ void ResponseStatus::MergeFrom(const ResponseStatus& from) {
 }
 
 void ResponseStatus::CopyFrom(const ResponseStatus& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:test_pkg.ResponseStatus)
+// @@protoc_insertion_point(class_specific_copy_from_start:user_pkg.ResponseStatus)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -470,7 +470,7 @@ UserInfo::UserInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(arena_constructor:test_pkg.UserInfo)
+  // @@protoc_insertion_point(arena_constructor:user_pkg.UserInfo)
 }
 UserInfo::UserInfo(const UserInfo& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -486,7 +486,7 @@ UserInfo::UserInfo(const UserInfo& from)
   ::memcpy(&id_, &from.id_,
     static_cast<size_t>(reinterpret_cast<char*>(&sex_) -
     reinterpret_cast<char*>(&id_)) + sizeof(sex_));
-  // @@protoc_insertion_point(copy_constructor:test_pkg.UserInfo)
+  // @@protoc_insertion_point(copy_constructor:user_pkg.UserInfo)
 }
 
 inline void UserInfo::SharedCtor() {
@@ -501,7 +501,7 @@ name_.InitDefault();
 }
 
 UserInfo::~UserInfo() {
-  // @@protoc_insertion_point(destructor:test_pkg.UserInfo)
+  // @@protoc_insertion_point(destructor:user_pkg.UserInfo)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -519,7 +519,7 @@ void UserInfo::SetCachedSize(int size) const {
 }
 
 void UserInfo::Clear() {
-// @@protoc_insertion_point(message_clear_start:test_pkg.UserInfo)
+// @@protoc_insertion_point(message_clear_start:user_pkg.UserInfo)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -551,7 +551,7 @@ const char* UserInfo::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx)
           auto str = _internal_mutable_name();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "test_pkg.UserInfo.name"));
+          CHK_(::_pbi::VerifyUTF8(str, "user_pkg.UserInfo.name"));
         } else
           goto handle_unusual;
         continue;
@@ -563,12 +563,12 @@ const char* UserInfo::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx)
         } else
           goto handle_unusual;
         continue;
-      // .test_pkg.UserInfo.Sex sex = 4;
+      // .user_pkg.UserInfo.Sex sex = 4;
       case 4:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
           uint64_t val = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint64(&ptr);
           CHK_(ptr);
-          _internal_set_sex(static_cast<::test_pkg::UserInfo_Sex>(val));
+          _internal_set_sex(static_cast<::user_pkg::UserInfo_Sex>(val));
         } else
           goto handle_unusual;
         continue;
@@ -597,7 +597,7 @@ failure:
 
 uint8_t* UserInfo::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:test_pkg.UserInfo)
+  // @@protoc_insertion_point(serialize_to_array_start:user_pkg.UserInfo)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -612,7 +612,7 @@ uint8_t* UserInfo::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_name().data(), static_cast<int>(this->_internal_name().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "test_pkg.UserInfo.name");
+      "user_pkg.UserInfo.name");
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_name(), target);
   }
@@ -623,7 +623,7 @@ uint8_t* UserInfo::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteUInt32ToArray(3, this->_internal_age(), target);
   }
 
-  // .test_pkg.UserInfo.Sex sex = 4;
+  // .user_pkg.UserInfo.Sex sex = 4;
   if (this->_internal_sex() != 0) {
     target = stream->EnsureSpace(target);
     target = ::_pbi::WireFormatLite::WriteEnumToArray(
@@ -634,12 +634,12 @@ uint8_t* UserInfo::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:test_pkg.UserInfo)
+  // @@protoc_insertion_point(serialize_to_array_end:user_pkg.UserInfo)
   return target;
 }
 
 size_t UserInfo::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:test_pkg.UserInfo)
+// @@protoc_insertion_point(message_byte_size_start:user_pkg.UserInfo)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -663,7 +663,7 @@ size_t UserInfo::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::UInt32SizePlusOne(this->_internal_age());
   }
 
-  // .test_pkg.UserInfo.Sex sex = 4;
+  // .user_pkg.UserInfo.Sex sex = 4;
   if (this->_internal_sex() != 0) {
     total_size += 1 +
       ::_pbi::WireFormatLite::EnumSize(this->_internal_sex());
@@ -686,7 +686,7 @@ void UserInfo::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
 
 
 void UserInfo::MergeFrom(const UserInfo& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:test_pkg.UserInfo)
+// @@protoc_insertion_point(class_specific_merge_from_start:user_pkg.UserInfo)
   GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -707,7 +707,7 @@ void UserInfo::MergeFrom(const UserInfo& from) {
 }
 
 void UserInfo::CopyFrom(const UserInfo& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:test_pkg.UserInfo)
+// @@protoc_insertion_point(class_specific_copy_from_start:user_pkg.UserInfo)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -750,7 +750,7 @@ LoginRequest::LoginRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(arena_constructor:test_pkg.LoginRequest)
+  // @@protoc_insertion_point(arena_constructor:user_pkg.LoginRequest)
 }
 LoginRequest::LoginRequest(const LoginRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -764,7 +764,7 @@ LoginRequest::LoginRequest(const LoginRequest& from)
       GetArenaForAllocation());
   }
   uid_ = from.uid_;
-  // @@protoc_insertion_point(copy_constructor:test_pkg.LoginRequest)
+  // @@protoc_insertion_point(copy_constructor:user_pkg.LoginRequest)
 }
 
 inline void LoginRequest::SharedCtor() {
@@ -776,7 +776,7 @@ uid_ = 0u;
 }
 
 LoginRequest::~LoginRequest() {
-  // @@protoc_insertion_point(destructor:test_pkg.LoginRequest)
+  // @@protoc_insertion_point(destructor:user_pkg.LoginRequest)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -794,7 +794,7 @@ void LoginRequest::SetCachedSize(int size) const {
 }
 
 void LoginRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:test_pkg.LoginRequest)
+// @@protoc_insertion_point(message_clear_start:user_pkg.LoginRequest)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -824,7 +824,7 @@ const char* LoginRequest::_InternalParse(const char* ptr, ::_pbi::ParseContext* 
           auto str = _internal_mutable_password();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "test_pkg.LoginRequest.password"));
+          CHK_(::_pbi::VerifyUTF8(str, "user_pkg.LoginRequest.password"));
         } else
           goto handle_unusual;
         continue;
@@ -853,7 +853,7 @@ failure:
 
 uint8_t* LoginRequest::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:test_pkg.LoginRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:user_pkg.LoginRequest)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -868,7 +868,7 @@ uint8_t* LoginRequest::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_password().data(), static_cast<int>(this->_internal_password().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "test_pkg.LoginRequest.password");
+      "user_pkg.LoginRequest.password");
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_password(), target);
   }
@@ -877,12 +877,12 @@ uint8_t* LoginRequest::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:test_pkg.LoginRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:user_pkg.LoginRequest)
   return target;
 }
 
 size_t LoginRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:test_pkg.LoginRequest)
+// @@protoc_insertion_point(message_byte_size_start:user_pkg.LoginRequest)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -918,7 +918,7 @@ void LoginRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
 
 
 void LoginRequest::MergeFrom(const LoginRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:test_pkg.LoginRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:user_pkg.LoginRequest)
   GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -933,7 +933,7 @@ void LoginRequest::MergeFrom(const LoginRequest& from) {
 }
 
 void LoginRequest::CopyFrom(const LoginRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:test_pkg.LoginRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:user_pkg.LoginRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -965,10 +965,10 @@ void LoginRequest::InternalSwap(LoginRequest* other) {
 
 class LoginResponse::_Internal {
  public:
-  static const ::test_pkg::ResponseStatus& status(const LoginResponse* msg);
+  static const ::user_pkg::ResponseStatus& status(const LoginResponse* msg);
 };
 
-const ::test_pkg::ResponseStatus&
+const ::user_pkg::ResponseStatus&
 LoginResponse::_Internal::status(const LoginResponse* msg) {
   return *msg->status_;
 }
@@ -976,7 +976,7 @@ LoginResponse::LoginResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(arena_constructor:test_pkg.LoginResponse)
+  // @@protoc_insertion_point(arena_constructor:user_pkg.LoginResponse)
 }
 LoginResponse::LoginResponse(const LoginResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -990,11 +990,11 @@ LoginResponse::LoginResponse(const LoginResponse& from)
       GetArenaForAllocation());
   }
   if (from._internal_has_status()) {
-    status_ = new ::test_pkg::ResponseStatus(*from.status_);
+    status_ = new ::user_pkg::ResponseStatus(*from.status_);
   } else {
     status_ = nullptr;
   }
-  // @@protoc_insertion_point(copy_constructor:test_pkg.LoginResponse)
+  // @@protoc_insertion_point(copy_constructor:user_pkg.LoginResponse)
 }
 
 inline void LoginResponse::SharedCtor() {
@@ -1006,7 +1006,7 @@ status_ = nullptr;
 }
 
 LoginResponse::~LoginResponse() {
-  // @@protoc_insertion_point(destructor:test_pkg.LoginResponse)
+  // @@protoc_insertion_point(destructor:user_pkg.LoginResponse)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -1025,7 +1025,7 @@ void LoginResponse::SetCachedSize(int size) const {
 }
 
 void LoginResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:test_pkg.LoginResponse)
+// @@protoc_insertion_point(message_clear_start:user_pkg.LoginResponse)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1044,7 +1044,7 @@ const char* LoginResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext*
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .test_pkg.ResponseStatus status = 1;
+      // .user_pkg.ResponseStatus status = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_status(), ptr);
@@ -1058,7 +1058,7 @@ const char* LoginResponse::_InternalParse(const char* ptr, ::_pbi::ParseContext*
           auto str = _internal_mutable_session_token();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "test_pkg.LoginResponse.session_token"));
+          CHK_(::_pbi::VerifyUTF8(str, "user_pkg.LoginResponse.session_token"));
         } else
           goto handle_unusual;
         continue;
@@ -1087,11 +1087,11 @@ failure:
 
 uint8_t* LoginResponse::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:test_pkg.LoginResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:user_pkg.LoginResponse)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .test_pkg.ResponseStatus status = 1;
+  // .user_pkg.ResponseStatus status = 1;
   if (this->_internal_has_status()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(1, _Internal::status(this),
@@ -1103,7 +1103,7 @@ uint8_t* LoginResponse::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_session_token().data(), static_cast<int>(this->_internal_session_token().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "test_pkg.LoginResponse.session_token");
+      "user_pkg.LoginResponse.session_token");
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_session_token(), target);
   }
@@ -1112,12 +1112,12 @@ uint8_t* LoginResponse::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:test_pkg.LoginResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:user_pkg.LoginResponse)
   return target;
 }
 
 size_t LoginResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:test_pkg.LoginResponse)
+// @@protoc_insertion_point(message_byte_size_start:user_pkg.LoginResponse)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -1131,7 +1131,7 @@ size_t LoginResponse::ByteSizeLong() const {
         this->_internal_session_token());
   }
 
-  // .test_pkg.ResponseStatus status = 1;
+  // .user_pkg.ResponseStatus status = 1;
   if (this->_internal_has_status()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -1155,7 +1155,7 @@ void LoginResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
 
 
 void LoginResponse::MergeFrom(const LoginResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:test_pkg.LoginResponse)
+// @@protoc_insertion_point(class_specific_merge_from_start:user_pkg.LoginResponse)
   GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -1164,13 +1164,13 @@ void LoginResponse::MergeFrom(const LoginResponse& from) {
     _internal_set_session_token(from._internal_session_token());
   }
   if (from._internal_has_status()) {
-    _internal_mutable_status()->::test_pkg::ResponseStatus::MergeFrom(from._internal_status());
+    _internal_mutable_status()->::user_pkg::ResponseStatus::MergeFrom(from._internal_status());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void LoginResponse::CopyFrom(const LoginResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:test_pkg.LoginResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:user_pkg.LoginResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -1208,7 +1208,7 @@ GetFriendListRequest::GetFriendListRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor();
-  // @@protoc_insertion_point(arena_constructor:test_pkg.GetFriendListRequest)
+  // @@protoc_insertion_point(arena_constructor:user_pkg.GetFriendListRequest)
 }
 GetFriendListRequest::GetFriendListRequest(const GetFriendListRequest& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -1216,7 +1216,7 @@ GetFriendListRequest::GetFriendListRequest(const GetFriendListRequest& from)
   ::memcpy(&uid_, &from.uid_,
     static_cast<size_t>(reinterpret_cast<char*>(&page_size_) -
     reinterpret_cast<char*>(&uid_)) + sizeof(page_size_));
-  // @@protoc_insertion_point(copy_constructor:test_pkg.GetFriendListRequest)
+  // @@protoc_insertion_point(copy_constructor:user_pkg.GetFriendListRequest)
 }
 
 inline void GetFriendListRequest::SharedCtor() {
@@ -1227,7 +1227,7 @@ inline void GetFriendListRequest::SharedCtor() {
 }
 
 GetFriendListRequest::~GetFriendListRequest() {
-  // @@protoc_insertion_point(destructor:test_pkg.GetFriendListRequest)
+  // @@protoc_insertion_point(destructor:user_pkg.GetFriendListRequest)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -1244,7 +1244,7 @@ void GetFriendListRequest::SetCachedSize(int size) const {
 }
 
 void GetFriendListRequest::Clear() {
-// @@protoc_insertion_point(message_clear_start:test_pkg.GetFriendListRequest)
+// @@protoc_insertion_point(message_clear_start:user_pkg.GetFriendListRequest)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1310,7 +1310,7 @@ failure:
 
 uint8_t* GetFriendListRequest::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:test_pkg.GetFriendListRequest)
+  // @@protoc_insertion_point(serialize_to_array_start:user_pkg.GetFriendListRequest)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -1336,12 +1336,12 @@ uint8_t* GetFriendListRequest::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:test_pkg.GetFriendListRequest)
+  // @@protoc_insertion_point(serialize_to_array_end:user_pkg.GetFriendListRequest)
   return target;
 }
 
 size_t GetFriendListRequest::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:test_pkg.GetFriendListRequest)
+// @@protoc_insertion_point(message_byte_size_start:user_pkg.GetFriendListRequest)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -1380,7 +1380,7 @@ void GetFriendListRequest::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
 
 
 void GetFriendListRequest::MergeFrom(const GetFriendListRequest& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:test_pkg.GetFriendListRequest)
+// @@protoc_insertion_point(class_specific_merge_from_start:user_pkg.GetFriendListRequest)
   GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -1398,7 +1398,7 @@ void GetFriendListRequest::MergeFrom(const GetFriendListRequest& from) {
 }
 
 void GetFriendListRequest::CopyFrom(const GetFriendListRequest& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:test_pkg.GetFriendListRequest)
+// @@protoc_insertion_point(class_specific_copy_from_start:user_pkg.GetFriendListRequest)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -1429,10 +1429,10 @@ void GetFriendListRequest::InternalSwap(GetFriendListRequest* other) {
 
 class GetFriendListResponse::_Internal {
  public:
-  static const ::test_pkg::ResponseStatus& status(const GetFriendListResponse* msg);
+  static const ::user_pkg::ResponseStatus& status(const GetFriendListResponse* msg);
 };
 
-const ::test_pkg::ResponseStatus&
+const ::user_pkg::ResponseStatus&
 GetFriendListResponse::_Internal::status(const GetFriendListResponse* msg) {
   return *msg->status_;
 }
@@ -1441,18 +1441,18 @@ GetFriendListResponse::GetFriendListResponse(::PROTOBUF_NAMESPACE_ID::Arena* are
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned),
   friends_(arena) {
   SharedCtor();
-  // @@protoc_insertion_point(arena_constructor:test_pkg.GetFriendListResponse)
+  // @@protoc_insertion_point(arena_constructor:user_pkg.GetFriendListResponse)
 }
 GetFriendListResponse::GetFriendListResponse(const GetFriendListResponse& from)
   : ::PROTOBUF_NAMESPACE_ID::Message(),
       friends_(from.friends_) {
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
   if (from._internal_has_status()) {
-    status_ = new ::test_pkg::ResponseStatus(*from.status_);
+    status_ = new ::user_pkg::ResponseStatus(*from.status_);
   } else {
     status_ = nullptr;
   }
-  // @@protoc_insertion_point(copy_constructor:test_pkg.GetFriendListResponse)
+  // @@protoc_insertion_point(copy_constructor:user_pkg.GetFriendListResponse)
 }
 
 inline void GetFriendListResponse::SharedCtor() {
@@ -1460,7 +1460,7 @@ status_ = nullptr;
 }
 
 GetFriendListResponse::~GetFriendListResponse() {
-  // @@protoc_insertion_point(destructor:test_pkg.GetFriendListResponse)
+  // @@protoc_insertion_point(destructor:user_pkg.GetFriendListResponse)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -1478,7 +1478,7 @@ void GetFriendListResponse::SetCachedSize(int size) const {
 }
 
 void GetFriendListResponse::Clear() {
-// @@protoc_insertion_point(message_clear_start:test_pkg.GetFriendListResponse)
+// @@protoc_insertion_point(message_clear_start:user_pkg.GetFriendListResponse)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -1497,7 +1497,7 @@ const char* GetFriendListResponse::_InternalParse(const char* ptr, ::_pbi::Parse
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // .test_pkg.ResponseStatus status = 1;
+      // .user_pkg.ResponseStatus status = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
           ptr = ctx->ParseMessage(_internal_mutable_status(), ptr);
@@ -1505,7 +1505,7 @@ const char* GetFriendListResponse::_InternalParse(const char* ptr, ::_pbi::Parse
         } else
           goto handle_unusual;
         continue;
-      // repeated .test_pkg.UserInfo friends = 2;
+      // repeated .user_pkg.UserInfo friends = 2;
       case 2:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
           ptr -= 1;
@@ -1543,18 +1543,18 @@ failure:
 
 uint8_t* GetFriendListResponse::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:test_pkg.GetFriendListResponse)
+  // @@protoc_insertion_point(serialize_to_array_start:user_pkg.GetFriendListResponse)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // .test_pkg.ResponseStatus status = 1;
+  // .user_pkg.ResponseStatus status = 1;
   if (this->_internal_has_status()) {
     target = ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::
       InternalWriteMessage(1, _Internal::status(this),
         _Internal::status(this).GetCachedSize(), target, stream);
   }
 
-  // repeated .test_pkg.UserInfo friends = 2;
+  // repeated .user_pkg.UserInfo friends = 2;
   for (unsigned i = 0,
       n = static_cast<unsigned>(this->_internal_friends_size()); i < n; i++) {
     const auto& repfield = this->_internal_friends(i);
@@ -1566,26 +1566,26 @@ uint8_t* GetFriendListResponse::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:test_pkg.GetFriendListResponse)
+  // @@protoc_insertion_point(serialize_to_array_end:user_pkg.GetFriendListResponse)
   return target;
 }
 
 size_t GetFriendListResponse::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:test_pkg.GetFriendListResponse)
+// @@protoc_insertion_point(message_byte_size_start:user_pkg.GetFriendListResponse)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // repeated .test_pkg.UserInfo friends = 2;
+  // repeated .user_pkg.UserInfo friends = 2;
   total_size += 1UL * this->_internal_friends_size();
   for (const auto& msg : this->friends_) {
     total_size +=
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(msg);
   }
 
-  // .test_pkg.ResponseStatus status = 1;
+  // .user_pkg.ResponseStatus status = 1;
   if (this->_internal_has_status()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::MessageSize(
@@ -1609,20 +1609,20 @@ void GetFriendListResponse::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to,
 
 
 void GetFriendListResponse::MergeFrom(const GetFriendListResponse& from) {
-// @@protoc_insertion_point(class_specific_merge_from_start:test_pkg.GetFriendListResponse)
+// @@protoc_insertion_point(class_specific_merge_from_start:user_pkg.GetFriendListResponse)
   GOOGLE_DCHECK_NE(&from, this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
   friends_.MergeFrom(from.friends_);
   if (from._internal_has_status()) {
-    _internal_mutable_status()->::test_pkg::ResponseStatus::MergeFrom(from._internal_status());
+    _internal_mutable_status()->::user_pkg::ResponseStatus::MergeFrom(from._internal_status());
   }
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void GetFriendListResponse::CopyFrom(const GetFriendListResponse& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:test_pkg.GetFriendListResponse)
+// @@protoc_insertion_point(class_specific_copy_from_start:user_pkg.GetFriendListResponse)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -1659,16 +1659,16 @@ const ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor* UserServiceRpc::GetDescriptor(
 }
 
 void UserServiceRpc::Login(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
-                         const ::test_pkg::LoginRequest*,
-                         ::test_pkg::LoginResponse*,
+                         const ::user_pkg::LoginRequest*,
+                         ::user_pkg::LoginResponse*,
                          ::google::protobuf::Closure* done) {
   controller->SetFailed("Method Login() not implemented.");
   done->Run();
 }
 
 void UserServiceRpc::GetFriendList(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
-                         const ::test_pkg::GetFriendListRequest*,
-                         ::test_pkg::GetFriendListResponse*,
+                         const ::user_pkg::GetFriendListRequest*,
+                         ::user_pkg::GetFriendListResponse*,
                          ::google::protobuf::Closure* done) {
   controller->SetFailed("Method GetFriendList() not implemented.");
   done->Run();
@@ -1683,17 +1683,17 @@ void UserServiceRpc::CallMethod(const ::PROTOBUF_NAMESPACE_ID::MethodDescriptor*
   switch(method->index()) {
     case 0:
       Login(controller,
-             ::PROTOBUF_NAMESPACE_ID::internal::DownCast<const ::test_pkg::LoginRequest*>(
+             ::PROTOBUF_NAMESPACE_ID::internal::DownCast<const ::user_pkg::LoginRequest*>(
                  request),
-             ::PROTOBUF_NAMESPACE_ID::internal::DownCast<::test_pkg::LoginResponse*>(
+             ::PROTOBUF_NAMESPACE_ID::internal::DownCast<::user_pkg::LoginResponse*>(
                  response),
              done);
       break;
     case 1:
       GetFriendList(controller,
-             ::PROTOBUF_NAMESPACE_ID::internal::DownCast<const ::test_pkg::GetFriendListRequest*>(
+             ::PROTOBUF_NAMESPACE_ID::internal::DownCast<const ::user_pkg::GetFriendListRequest*>(
                  request),
-             ::PROTOBUF_NAMESPACE_ID::internal::DownCast<::test_pkg::GetFriendListResponse*>(
+             ::PROTOBUF_NAMESPACE_ID::internal::DownCast<::user_pkg::GetFriendListResponse*>(
                  response),
              done);
       break;
@@ -1708,9 +1708,9 @@ const ::PROTOBUF_NAMESPACE_ID::Message& UserServiceRpc::GetRequestPrototype(
   GOOGLE_DCHECK_EQ(method->service(), descriptor());
   switch(method->index()) {
     case 0:
-      return ::test_pkg::LoginRequest::default_instance();
+      return ::user_pkg::LoginRequest::default_instance();
     case 1:
-      return ::test_pkg::GetFriendListRequest::default_instance();
+      return ::user_pkg::GetFriendListRequest::default_instance();
     default:
       GOOGLE_LOG(FATAL) << "Bad method index; this should never happen.";
       return *::PROTOBUF_NAMESPACE_ID::MessageFactory::generated_factory()
@@ -1723,9 +1723,9 @@ const ::PROTOBUF_NAMESPACE_ID::Message& UserServiceRpc::GetResponsePrototype(
   GOOGLE_DCHECK_EQ(method->service(), descriptor());
   switch(method->index()) {
     case 0:
-      return ::test_pkg::LoginResponse::default_instance();
+      return ::user_pkg::LoginResponse::default_instance();
     case 1:
-      return ::test_pkg::GetFriendListResponse::default_instance();
+      return ::user_pkg::GetFriendListResponse::default_instance();
     default:
       GOOGLE_LOG(FATAL) << "Bad method index; this should never happen.";
       return *::PROTOBUF_NAMESPACE_ID::MessageFactory::generated_factory()
@@ -1745,46 +1745,46 @@ UserServiceRpc_Stub::~UserServiceRpc_Stub() {
 }
 
 void UserServiceRpc_Stub::Login(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
-                              const ::test_pkg::LoginRequest* request,
-                              ::test_pkg::LoginResponse* response,
+                              const ::user_pkg::LoginRequest* request,
+                              ::user_pkg::LoginResponse* response,
                               ::google::protobuf::Closure* done) {
   channel_->CallMethod(descriptor()->method(0),
                        controller, request, response, done);
 }
 void UserServiceRpc_Stub::GetFriendList(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
-                              const ::test_pkg::GetFriendListRequest* request,
-                              ::test_pkg::GetFriendListResponse* response,
+                              const ::user_pkg::GetFriendListRequest* request,
+                              ::user_pkg::GetFriendListResponse* response,
                               ::google::protobuf::Closure* done) {
   channel_->CallMethod(descriptor()->method(1),
                        controller, request, response, done);
 }
 
 // @@protoc_insertion_point(namespace_scope)
-}  // namespace test_pkg
+}  // namespace user_pkg
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::test_pkg::ResponseStatus*
-Arena::CreateMaybeMessage< ::test_pkg::ResponseStatus >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::test_pkg::ResponseStatus >(arena);
+template<> PROTOBUF_NOINLINE ::user_pkg::ResponseStatus*
+Arena::CreateMaybeMessage< ::user_pkg::ResponseStatus >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::user_pkg::ResponseStatus >(arena);
 }
-template<> PROTOBUF_NOINLINE ::test_pkg::UserInfo*
-Arena::CreateMaybeMessage< ::test_pkg::UserInfo >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::test_pkg::UserInfo >(arena);
+template<> PROTOBUF_NOINLINE ::user_pkg::UserInfo*
+Arena::CreateMaybeMessage< ::user_pkg::UserInfo >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::user_pkg::UserInfo >(arena);
 }
-template<> PROTOBUF_NOINLINE ::test_pkg::LoginRequest*
-Arena::CreateMaybeMessage< ::test_pkg::LoginRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::test_pkg::LoginRequest >(arena);
+template<> PROTOBUF_NOINLINE ::user_pkg::LoginRequest*
+Arena::CreateMaybeMessage< ::user_pkg::LoginRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::user_pkg::LoginRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::test_pkg::LoginResponse*
-Arena::CreateMaybeMessage< ::test_pkg::LoginResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::test_pkg::LoginResponse >(arena);
+template<> PROTOBUF_NOINLINE ::user_pkg::LoginResponse*
+Arena::CreateMaybeMessage< ::user_pkg::LoginResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::user_pkg::LoginResponse >(arena);
 }
-template<> PROTOBUF_NOINLINE ::test_pkg::GetFriendListRequest*
-Arena::CreateMaybeMessage< ::test_pkg::GetFriendListRequest >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::test_pkg::GetFriendListRequest >(arena);
+template<> PROTOBUF_NOINLINE ::user_pkg::GetFriendListRequest*
+Arena::CreateMaybeMessage< ::user_pkg::GetFriendListRequest >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::user_pkg::GetFriendListRequest >(arena);
 }
-template<> PROTOBUF_NOINLINE ::test_pkg::GetFriendListResponse*
-Arena::CreateMaybeMessage< ::test_pkg::GetFriendListResponse >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::test_pkg::GetFriendListResponse >(arena);
+template<> PROTOBUF_NOINLINE ::user_pkg::GetFriendListResponse*
+Arena::CreateMaybeMessage< ::user_pkg::GetFriendListResponse >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::user_pkg::GetFriendListResponse >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

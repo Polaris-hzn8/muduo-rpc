@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package test_pkg;
+package user_pkg;
 option cc_generic_services = true;
 option optimize_for = SPEED;
 

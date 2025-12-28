@@ -2,12 +2,18 @@
 # protobuf 生成文件目录
 set(PROTOBUF_GEN_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../protobuff/pbgen)
 
+# mdrpc 头文件目录
+set(MDRPC_INCLUDE_DIR ${CMAKE_SOURCE_DIR}/mdrpc/include)
+
+# 收集当前目录的源文件
+file(GLOB CURRENT_SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/*.cc")
+
 # 收集 protobuf 生成的源文件
 file(GLOB PROTOBUF_SOURCES "${PROTOBUF_GEN_DIR}/*.cc")
 
 # 源文件列表
 set(SOURCES
-    ${CMAKE_CURRENT_SOURCE_DIR}/*.cc
+    ${CURRENT_SOURCES}
     ${PROTOBUF_SOURCES}
 )
 
@@ -17,6 +23,7 @@ add_executable(rpc_provider ${SOURCES})
 # 包含目录（使用 target_include_directories 更现代）
 target_include_directories(rpc_provider PRIVATE 
     ${PROTOBUF_GEN_DIR}
+    ${MDRPC_INCLUDE_DIR}
     /opt/protobuf3/include
 )
 

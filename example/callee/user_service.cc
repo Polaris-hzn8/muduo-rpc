@@ -1,10 +1,12 @@
 
 #include <string>
 #include <iostream>
+
 #include "user.pb.h"
+#include "mdrpc_application.h"
 
 // RPC服务发布端
-class UserService : public test_pkg::UserServiceRpc {
+class UserService : public user_pkg::UserServiceRpc {
 public:
     bool Login(const std::string& uid, const std::string& password) {
         // 远程方法执行的具体逻辑
@@ -20,8 +22,8 @@ public:
     // 重写基类虚函数（rpc框架调用）
     void Login(
         ::google::protobuf::RpcController* controller,
-        const ::test_pkg::LoginRequest* request,
-        ::test_pkg::LoginResponse* response,
+        const ::user_pkg::LoginRequest* request,
+        ::user_pkg::LoginResponse* response,
         ::google::protobuf::Closure* done) {
         // 框架给业务上报了请求参数LoginRequest，业务获取相应数据做本地业务
         // Protobuff直接从字节流中取出数据 省去协议解析的过程
@@ -31,7 +33,7 @@ public:
         // 2. 调用本地业务方法
         bool login_result = Login(uid, password);
         // 3. 填充响应
-        test_pkg::ResponseStatus* status = response->mutable_status();
+        user_pkg::ResponseStatus* status = response->mutable_status();
         if (login_result) {
             status->set_code(0);
             status->set_message("login succeed!");
