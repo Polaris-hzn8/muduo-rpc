@@ -46,7 +46,7 @@ struct TableStruct_test_2eproto {
   static const uint32_t offsets[];
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_test_2eproto;
-namespace fixbug {
+namespace test_pkg {
 class GetFriendListRequest;
 struct GetFriendListRequestDefaultTypeInternal;
 extern GetFriendListRequestDefaultTypeInternal _GetFriendListRequest_default_instance_;
@@ -59,32 +59,33 @@ extern LoginRequestDefaultTypeInternal _LoginRequest_default_instance_;
 class LoginResponse;
 struct LoginResponseDefaultTypeInternal;
 extern LoginResponseDefaultTypeInternal _LoginResponse_default_instance_;
-class ResultCode;
-struct ResultCodeDefaultTypeInternal;
-extern ResultCodeDefaultTypeInternal _ResultCode_default_instance_;
+class ResponseStatus;
+struct ResponseStatusDefaultTypeInternal;
+extern ResponseStatusDefaultTypeInternal _ResponseStatus_default_instance_;
 class UserInfo;
 struct UserInfoDefaultTypeInternal;
 extern UserInfoDefaultTypeInternal _UserInfo_default_instance_;
-}  // namespace fixbug
+}  // namespace test_pkg
 PROTOBUF_NAMESPACE_OPEN
-template<> ::fixbug::GetFriendListRequest* Arena::CreateMaybeMessage<::fixbug::GetFriendListRequest>(Arena*);
-template<> ::fixbug::GetFriendListResponse* Arena::CreateMaybeMessage<::fixbug::GetFriendListResponse>(Arena*);
-template<> ::fixbug::LoginRequest* Arena::CreateMaybeMessage<::fixbug::LoginRequest>(Arena*);
-template<> ::fixbug::LoginResponse* Arena::CreateMaybeMessage<::fixbug::LoginResponse>(Arena*);
-template<> ::fixbug::ResultCode* Arena::CreateMaybeMessage<::fixbug::ResultCode>(Arena*);
-template<> ::fixbug::UserInfo* Arena::CreateMaybeMessage<::fixbug::UserInfo>(Arena*);
+template<> ::test_pkg::GetFriendListRequest* Arena::CreateMaybeMessage<::test_pkg::GetFriendListRequest>(Arena*);
+template<> ::test_pkg::GetFriendListResponse* Arena::CreateMaybeMessage<::test_pkg::GetFriendListResponse>(Arena*);
+template<> ::test_pkg::LoginRequest* Arena::CreateMaybeMessage<::test_pkg::LoginRequest>(Arena*);
+template<> ::test_pkg::LoginResponse* Arena::CreateMaybeMessage<::test_pkg::LoginResponse>(Arena*);
+template<> ::test_pkg::ResponseStatus* Arena::CreateMaybeMessage<::test_pkg::ResponseStatus>(Arena*);
+template<> ::test_pkg::UserInfo* Arena::CreateMaybeMessage<::test_pkg::UserInfo>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
-namespace fixbug {
+namespace test_pkg {
 
 enum UserInfo_Sex : int {
-  UserInfo_Sex_MAN = 0,
-  UserInfo_Sex_WOMAN = 1,
+  UserInfo_Sex_SEX_UNSPECIFIED = 0,
+  UserInfo_Sex_MALE = 1,
+  UserInfo_Sex_FEMALE = 2,
   UserInfo_Sex_UserInfo_Sex_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
   UserInfo_Sex_UserInfo_Sex_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
 };
 bool UserInfo_Sex_IsValid(int value);
-constexpr UserInfo_Sex UserInfo_Sex_Sex_MIN = UserInfo_Sex_MAN;
-constexpr UserInfo_Sex UserInfo_Sex_Sex_MAX = UserInfo_Sex_WOMAN;
+constexpr UserInfo_Sex UserInfo_Sex_Sex_MIN = UserInfo_Sex_SEX_UNSPECIFIED;
+constexpr UserInfo_Sex UserInfo_Sex_Sex_MAX = UserInfo_Sex_FEMALE;
 constexpr int UserInfo_Sex_Sex_ARRAYSIZE = UserInfo_Sex_Sex_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* UserInfo_Sex_descriptor();
@@ -103,24 +104,24 @@ inline bool UserInfo_Sex_Parse(
 }
 // ===================================================================
 
-class ResultCode final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:fixbug.ResultCode) */ {
+class ResponseStatus final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:test_pkg.ResponseStatus) */ {
  public:
-  inline ResultCode() : ResultCode(nullptr) {}
-  ~ResultCode() override;
-  explicit PROTOBUF_CONSTEXPR ResultCode(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+  inline ResponseStatus() : ResponseStatus(nullptr) {}
+  ~ResponseStatus() override;
+  explicit PROTOBUF_CONSTEXPR ResponseStatus(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
 
-  ResultCode(const ResultCode& from);
-  ResultCode(ResultCode&& from) noexcept
-    : ResultCode() {
+  ResponseStatus(const ResponseStatus& from);
+  ResponseStatus(ResponseStatus&& from) noexcept
+    : ResponseStatus() {
     *this = ::std::move(from);
   }
 
-  inline ResultCode& operator=(const ResultCode& from) {
+  inline ResponseStatus& operator=(const ResponseStatus& from) {
     CopyFrom(from);
     return *this;
   }
-  inline ResultCode& operator=(ResultCode&& from) noexcept {
+  inline ResponseStatus& operator=(ResponseStatus&& from) noexcept {
     if (this == &from) return *this;
     if (GetOwningArena() == from.GetOwningArena()
   #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
@@ -143,20 +144,20 @@ class ResultCode final :
   static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
     return default_instance().GetMetadata().reflection;
   }
-  static const ResultCode& default_instance() {
+  static const ResponseStatus& default_instance() {
     return *internal_default_instance();
   }
-  static inline const ResultCode* internal_default_instance() {
-    return reinterpret_cast<const ResultCode*>(
-               &_ResultCode_default_instance_);
+  static inline const ResponseStatus* internal_default_instance() {
+    return reinterpret_cast<const ResponseStatus*>(
+               &_ResponseStatus_default_instance_);
   }
   static constexpr int kIndexInFileMessages =
     0;
 
-  friend void swap(ResultCode& a, ResultCode& b) {
+  friend void swap(ResponseStatus& a, ResponseStatus& b) {
     a.Swap(&b);
   }
-  inline void Swap(ResultCode* other) {
+  inline void Swap(ResponseStatus* other) {
     if (other == this) return;
   #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
     if (GetOwningArena() != nullptr &&
@@ -169,7 +170,7 @@ class ResultCode final :
       ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
     }
   }
-  void UnsafeArenaSwap(ResultCode* other) {
+  void UnsafeArenaSwap(ResponseStatus* other) {
     if (other == this) return;
     GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
     InternalSwap(other);
@@ -177,13 +178,13 @@ class ResultCode final :
 
   // implements Message ----------------------------------------------
 
-  ResultCode* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
-    return CreateMaybeMessage<ResultCode>(arena);
+  ResponseStatus* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<ResponseStatus>(arena);
   }
   using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
-  void CopyFrom(const ResultCode& from);
+  void CopyFrom(const ResponseStatus& from);
   using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
-  void MergeFrom(const ResultCode& from);
+  void MergeFrom(const ResponseStatus& from);
   private:
   static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message* to, const ::PROTOBUF_NAMESPACE_ID::Message& from);
   public:
@@ -200,15 +201,15 @@ class ResultCode final :
   void SharedCtor();
   void SharedDtor();
   void SetCachedSize(int size) const final;
-  void InternalSwap(ResultCode* other);
+  void InternalSwap(ResponseStatus* other);
 
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "fixbug.ResultCode";
+    return "test_pkg.ResponseStatus";
   }
   protected:
-  explicit ResultCode(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+  explicit ResponseStatus(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                        bool is_message_owned = false);
   public:
 
@@ -222,48 +223,48 @@ class ResultCode final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kErrMsgFieldNumber = 2,
-    kErrCodeFieldNumber = 1,
+    kMessageFieldNumber = 2,
+    kCodeFieldNumber = 1,
   };
-  // bytes err_msg = 2;
-  void clear_err_msg();
-  const std::string& err_msg() const;
+  // string message = 2;
+  void clear_message();
+  const std::string& message() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_err_msg(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_err_msg();
-  PROTOBUF_NODISCARD std::string* release_err_msg();
-  void set_allocated_err_msg(std::string* err_msg);
+  void set_message(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_message();
+  PROTOBUF_NODISCARD std::string* release_message();
+  void set_allocated_message(std::string* message);
   private:
-  const std::string& _internal_err_msg() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_err_msg(const std::string& value);
-  std::string* _internal_mutable_err_msg();
+  const std::string& _internal_message() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_message(const std::string& value);
+  std::string* _internal_mutable_message();
   public:
 
-  // int32 err_code = 1;
-  void clear_err_code();
-  int32_t err_code() const;
-  void set_err_code(int32_t value);
+  // int32 code = 1;
+  void clear_code();
+  int32_t code() const;
+  void set_code(int32_t value);
   private:
-  int32_t _internal_err_code() const;
-  void _internal_set_err_code(int32_t value);
+  int32_t _internal_code() const;
+  void _internal_set_code(int32_t value);
   public:
 
-  // @@protoc_insertion_point(class_scope:fixbug.ResultCode)
+  // @@protoc_insertion_point(class_scope:test_pkg.ResponseStatus)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr err_msg_;
-  int32_t err_code_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr message_;
+  int32_t code_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_test_2eproto;
 };
 // -------------------------------------------------------------------
 
 class UserInfo final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:fixbug.UserInfo) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:test_pkg.UserInfo) */ {
  public:
   inline UserInfo() : UserInfo(nullptr) {}
   ~UserInfo() override;
@@ -364,7 +365,7 @@ class UserInfo final :
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "fixbug.UserInfo";
+    return "test_pkg.UserInfo";
   }
   protected:
   explicit UserInfo(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -379,10 +380,12 @@ class UserInfo final :
   // nested types ----------------------------------------------------
 
   typedef UserInfo_Sex Sex;
-  static constexpr Sex MAN =
-    UserInfo_Sex_MAN;
-  static constexpr Sex WOMAN =
-    UserInfo_Sex_WOMAN;
+  static constexpr Sex SEX_UNSPECIFIED =
+    UserInfo_Sex_SEX_UNSPECIFIED;
+  static constexpr Sex MALE =
+    UserInfo_Sex_MALE;
+  static constexpr Sex FEMALE =
+    UserInfo_Sex_FEMALE;
   static inline bool Sex_IsValid(int value) {
     return UserInfo_Sex_IsValid(value);
   }
@@ -416,7 +419,7 @@ class UserInfo final :
     kAgeFieldNumber = 3,
     kSexFieldNumber = 4,
   };
-  // bytes name = 2;
+  // string name = 2;
   void clear_name();
   const std::string& name() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -448,16 +451,16 @@ class UserInfo final :
   void _internal_set_age(uint32_t value);
   public:
 
-  // .fixbug.UserInfo.Sex sex = 4;
+  // .test_pkg.UserInfo.Sex sex = 4;
   void clear_sex();
-  ::fixbug::UserInfo_Sex sex() const;
-  void set_sex(::fixbug::UserInfo_Sex value);
+  ::test_pkg::UserInfo_Sex sex() const;
+  void set_sex(::test_pkg::UserInfo_Sex value);
   private:
-  ::fixbug::UserInfo_Sex _internal_sex() const;
-  void _internal_set_sex(::fixbug::UserInfo_Sex value);
+  ::test_pkg::UserInfo_Sex _internal_sex() const;
+  void _internal_set_sex(::test_pkg::UserInfo_Sex value);
   public:
 
-  // @@protoc_insertion_point(class_scope:fixbug.UserInfo)
+  // @@protoc_insertion_point(class_scope:test_pkg.UserInfo)
  private:
   class _Internal;
 
@@ -474,7 +477,7 @@ class UserInfo final :
 // -------------------------------------------------------------------
 
 class LoginRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:fixbug.LoginRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:test_pkg.LoginRequest) */ {
  public:
   inline LoginRequest() : LoginRequest(nullptr) {}
   ~LoginRequest() override;
@@ -575,7 +578,7 @@ class LoginRequest final :
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "fixbug.LoginRequest";
+    return "test_pkg.LoginRequest";
   }
   protected:
   explicit LoginRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -592,48 +595,48 @@ class LoginRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kPassWordFieldNumber = 2,
-    kUserIdFieldNumber = 1,
+    kPasswordFieldNumber = 2,
+    kUidFieldNumber = 1,
   };
-  // string pass_word = 2;
-  void clear_pass_word();
-  const std::string& pass_word() const;
+  // string password = 2;
+  void clear_password();
+  const std::string& password() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_pass_word(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_pass_word();
-  PROTOBUF_NODISCARD std::string* release_pass_word();
-  void set_allocated_pass_word(std::string* pass_word);
+  void set_password(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_password();
+  PROTOBUF_NODISCARD std::string* release_password();
+  void set_allocated_password(std::string* password);
   private:
-  const std::string& _internal_pass_word() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_pass_word(const std::string& value);
-  std::string* _internal_mutable_pass_word();
+  const std::string& _internal_password() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_password(const std::string& value);
+  std::string* _internal_mutable_password();
   public:
 
-  // uint32 user_id = 1;
-  void clear_user_id();
-  uint32_t user_id() const;
-  void set_user_id(uint32_t value);
+  // uint32 uid = 1;
+  void clear_uid();
+  uint32_t uid() const;
+  void set_uid(uint32_t value);
   private:
-  uint32_t _internal_user_id() const;
-  void _internal_set_user_id(uint32_t value);
+  uint32_t _internal_uid() const;
+  void _internal_set_uid(uint32_t value);
   public:
 
-  // @@protoc_insertion_point(class_scope:fixbug.LoginRequest)
+  // @@protoc_insertion_point(class_scope:test_pkg.LoginRequest)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pass_word_;
-  uint32_t user_id_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr password_;
+  uint32_t uid_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_test_2eproto;
 };
 // -------------------------------------------------------------------
 
 class LoginResponse final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:fixbug.LoginResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:test_pkg.LoginResponse) */ {
  public:
   inline LoginResponse() : LoginResponse(nullptr) {}
   ~LoginResponse() override;
@@ -734,7 +737,7 @@ class LoginResponse final :
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "fixbug.LoginResponse";
+    return "test_pkg.LoginResponse";
   }
   protected:
   explicit LoginResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -751,52 +754,57 @@ class LoginResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kRetCodeFieldNumber = 1,
-    kSuccessFieldNumber = 2,
+    kSessionTokenFieldNumber = 2,
+    kStatusFieldNumber = 1,
   };
-  // .fixbug.ResultCode ret_code = 1;
-  bool has_ret_code() const;
+  // string session_token = 2;
+  void clear_session_token();
+  const std::string& session_token() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_session_token(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_session_token();
+  PROTOBUF_NODISCARD std::string* release_session_token();
+  void set_allocated_session_token(std::string* session_token);
   private:
-  bool _internal_has_ret_code() const;
-  public:
-  void clear_ret_code();
-  const ::fixbug::ResultCode& ret_code() const;
-  PROTOBUF_NODISCARD ::fixbug::ResultCode* release_ret_code();
-  ::fixbug::ResultCode* mutable_ret_code();
-  void set_allocated_ret_code(::fixbug::ResultCode* ret_code);
-  private:
-  const ::fixbug::ResultCode& _internal_ret_code() const;
-  ::fixbug::ResultCode* _internal_mutable_ret_code();
-  public:
-  void unsafe_arena_set_allocated_ret_code(
-      ::fixbug::ResultCode* ret_code);
-  ::fixbug::ResultCode* unsafe_arena_release_ret_code();
-
-  // bool success = 2;
-  void clear_success();
-  bool success() const;
-  void set_success(bool value);
-  private:
-  bool _internal_success() const;
-  void _internal_set_success(bool value);
+  const std::string& _internal_session_token() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_session_token(const std::string& value);
+  std::string* _internal_mutable_session_token();
   public:
 
-  // @@protoc_insertion_point(class_scope:fixbug.LoginResponse)
+  // .test_pkg.ResponseStatus status = 1;
+  bool has_status() const;
+  private:
+  bool _internal_has_status() const;
+  public:
+  void clear_status();
+  const ::test_pkg::ResponseStatus& status() const;
+  PROTOBUF_NODISCARD ::test_pkg::ResponseStatus* release_status();
+  ::test_pkg::ResponseStatus* mutable_status();
+  void set_allocated_status(::test_pkg::ResponseStatus* status);
+  private:
+  const ::test_pkg::ResponseStatus& _internal_status() const;
+  ::test_pkg::ResponseStatus* _internal_mutable_status();
+  public:
+  void unsafe_arena_set_allocated_status(
+      ::test_pkg::ResponseStatus* status);
+  ::test_pkg::ResponseStatus* unsafe_arena_release_status();
+
+  // @@protoc_insertion_point(class_scope:test_pkg.LoginResponse)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::fixbug::ResultCode* ret_code_;
-  bool success_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr session_token_;
+  ::test_pkg::ResponseStatus* status_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_test_2eproto;
 };
 // -------------------------------------------------------------------
 
 class GetFriendListRequest final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:fixbug.GetFriendListRequest) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:test_pkg.GetFriendListRequest) */ {
  public:
   inline GetFriendListRequest() : GetFriendListRequest(nullptr) {}
   ~GetFriendListRequest() override;
@@ -897,7 +905,7 @@ class GetFriendListRequest final :
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "fixbug.GetFriendListRequest";
+    return "test_pkg.GetFriendListRequest";
   }
   protected:
   explicit GetFriendListRequest(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -914,32 +922,54 @@ class GetFriendListRequest final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kUserIdFieldNumber = 1,
+    kUidFieldNumber = 1,
+    kPageFieldNumber = 2,
+    kPageSizeFieldNumber = 3,
   };
-  // uint32 user_id = 1;
-  void clear_user_id();
-  uint32_t user_id() const;
-  void set_user_id(uint32_t value);
+  // uint32 uid = 1;
+  void clear_uid();
+  uint32_t uid() const;
+  void set_uid(uint32_t value);
   private:
-  uint32_t _internal_user_id() const;
-  void _internal_set_user_id(uint32_t value);
+  uint32_t _internal_uid() const;
+  void _internal_set_uid(uint32_t value);
   public:
 
-  // @@protoc_insertion_point(class_scope:fixbug.GetFriendListRequest)
+  // uint32 page = 2;
+  void clear_page();
+  uint32_t page() const;
+  void set_page(uint32_t value);
+  private:
+  uint32_t _internal_page() const;
+  void _internal_set_page(uint32_t value);
+  public:
+
+  // uint32 page_size = 3;
+  void clear_page_size();
+  uint32_t page_size() const;
+  void set_page_size(uint32_t value);
+  private:
+  uint32_t _internal_page_size() const;
+  void _internal_set_page_size(uint32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:test_pkg.GetFriendListRequest)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  uint32_t user_id_;
+  uint32_t uid_;
+  uint32_t page_;
+  uint32_t page_size_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_test_2eproto;
 };
 // -------------------------------------------------------------------
 
 class GetFriendListResponse final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:fixbug.GetFriendListResponse) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:test_pkg.GetFriendListResponse) */ {
  public:
   inline GetFriendListResponse() : GetFriendListResponse(nullptr) {}
   ~GetFriendListResponse() override;
@@ -1040,7 +1070,7 @@ class GetFriendListResponse final :
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "fixbug.GetFriendListResponse";
+    return "test_pkg.GetFriendListResponse";
   }
   protected:
   explicit GetFriendListResponse(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -1057,84 +1087,84 @@ class GetFriendListResponse final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kFriendListFieldNumber = 2,
-    kRetCodeFieldNumber = 1,
+    kFriendsFieldNumber = 2,
+    kStatusFieldNumber = 1,
   };
-  // repeated .fixbug.UserInfo friend_list = 2;
-  int friend_list_size() const;
+  // repeated .test_pkg.UserInfo friends = 2;
+  int friends_size() const;
   private:
-  int _internal_friend_list_size() const;
+  int _internal_friends_size() const;
   public:
-  void clear_friend_list();
-  ::fixbug::UserInfo* mutable_friend_list(int index);
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::fixbug::UserInfo >*
-      mutable_friend_list();
+  void clear_friends();
+  ::test_pkg::UserInfo* mutable_friends(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::test_pkg::UserInfo >*
+      mutable_friends();
   private:
-  const ::fixbug::UserInfo& _internal_friend_list(int index) const;
-  ::fixbug::UserInfo* _internal_add_friend_list();
+  const ::test_pkg::UserInfo& _internal_friends(int index) const;
+  ::test_pkg::UserInfo* _internal_add_friends();
   public:
-  const ::fixbug::UserInfo& friend_list(int index) const;
-  ::fixbug::UserInfo* add_friend_list();
-  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::fixbug::UserInfo >&
-      friend_list() const;
+  const ::test_pkg::UserInfo& friends(int index) const;
+  ::test_pkg::UserInfo* add_friends();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::test_pkg::UserInfo >&
+      friends() const;
 
-  // .fixbug.ResultCode ret_code = 1;
-  bool has_ret_code() const;
+  // .test_pkg.ResponseStatus status = 1;
+  bool has_status() const;
   private:
-  bool _internal_has_ret_code() const;
+  bool _internal_has_status() const;
   public:
-  void clear_ret_code();
-  const ::fixbug::ResultCode& ret_code() const;
-  PROTOBUF_NODISCARD ::fixbug::ResultCode* release_ret_code();
-  ::fixbug::ResultCode* mutable_ret_code();
-  void set_allocated_ret_code(::fixbug::ResultCode* ret_code);
+  void clear_status();
+  const ::test_pkg::ResponseStatus& status() const;
+  PROTOBUF_NODISCARD ::test_pkg::ResponseStatus* release_status();
+  ::test_pkg::ResponseStatus* mutable_status();
+  void set_allocated_status(::test_pkg::ResponseStatus* status);
   private:
-  const ::fixbug::ResultCode& _internal_ret_code() const;
-  ::fixbug::ResultCode* _internal_mutable_ret_code();
+  const ::test_pkg::ResponseStatus& _internal_status() const;
+  ::test_pkg::ResponseStatus* _internal_mutable_status();
   public:
-  void unsafe_arena_set_allocated_ret_code(
-      ::fixbug::ResultCode* ret_code);
-  ::fixbug::ResultCode* unsafe_arena_release_ret_code();
+  void unsafe_arena_set_allocated_status(
+      ::test_pkg::ResponseStatus* status);
+  ::test_pkg::ResponseStatus* unsafe_arena_release_status();
 
-  // @@protoc_insertion_point(class_scope:fixbug.GetFriendListResponse)
+  // @@protoc_insertion_point(class_scope:test_pkg.GetFriendListResponse)
  private:
   class _Internal;
 
   template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
-  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::fixbug::UserInfo > friend_list_;
-  ::fixbug::ResultCode* ret_code_;
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::test_pkg::UserInfo > friends_;
+  ::test_pkg::ResponseStatus* status_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_test_2eproto;
 };
 // ===================================================================
 
-class UserSeriviceRpc_Stub;
+class UserServiceRpc_Stub;
 
-class UserSeriviceRpc : public ::PROTOBUF_NAMESPACE_ID::Service {
+class UserServiceRpc : public ::PROTOBUF_NAMESPACE_ID::Service {
  protected:
   // This class should be treated as an abstract interface.
-  inline UserSeriviceRpc() {};
+  inline UserServiceRpc() {};
  public:
-  virtual ~UserSeriviceRpc();
+  virtual ~UserServiceRpc();
 
-  typedef UserSeriviceRpc_Stub Stub;
+  typedef UserServiceRpc_Stub Stub;
 
   static const ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor* descriptor();
 
   virtual void Login(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
-                       const ::fixbug::LoginRequest* request,
-                       ::fixbug::LoginResponse* response,
+                       const ::test_pkg::LoginRequest* request,
+                       ::test_pkg::LoginResponse* response,
                        ::google::protobuf::Closure* done);
   virtual void GetFriendList(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
-                       const ::fixbug::GetFriendListRequest* request,
-                       ::fixbug::GetFriendListResponse* response,
+                       const ::test_pkg::GetFriendListRequest* request,
+                       ::test_pkg::GetFriendListResponse* response,
                        ::google::protobuf::Closure* done);
 
   // implements Service ----------------------------------------------
 
-  const ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor* GetDescriptor();  
+  const ::PROTOBUF_NAMESPACE_ID::ServiceDescriptor* GetDescriptor();
   void CallMethod(const ::PROTOBUF_NAMESPACE_ID::MethodDescriptor* method,
                   ::PROTOBUF_NAMESPACE_ID::RpcController* controller,
                   const ::PROTOBUF_NAMESPACE_ID::Message* request,
@@ -1146,32 +1176,32 @@ class UserSeriviceRpc : public ::PROTOBUF_NAMESPACE_ID::Service {
     const ::PROTOBUF_NAMESPACE_ID::MethodDescriptor* method) const;
 
  private:
-  GOOGLE_DISALLOW_EVIL_CONSTRUCTORS(UserSeriviceRpc);
+  GOOGLE_DISALLOW_EVIL_CONSTRUCTORS(UserServiceRpc);
 };
 
-class UserSeriviceRpc_Stub : public UserSeriviceRpc {
+class UserServiceRpc_Stub : public UserServiceRpc {
  public:
-  UserSeriviceRpc_Stub(::PROTOBUF_NAMESPACE_ID::RpcChannel* channel);
-  UserSeriviceRpc_Stub(::PROTOBUF_NAMESPACE_ID::RpcChannel* channel,
+  UserServiceRpc_Stub(::PROTOBUF_NAMESPACE_ID::RpcChannel* channel);
+  UserServiceRpc_Stub(::PROTOBUF_NAMESPACE_ID::RpcChannel* channel,
                    ::PROTOBUF_NAMESPACE_ID::Service::ChannelOwnership ownership);
-  ~UserSeriviceRpc_Stub();
+  ~UserServiceRpc_Stub();
 
   inline ::PROTOBUF_NAMESPACE_ID::RpcChannel* channel() { return channel_; }
 
-  // implements UserSeriviceRpc ------------------------------------------
+  // implements UserServiceRpc ------------------------------------------
 
   void Login(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
-                       const ::fixbug::LoginRequest* request,
-                       ::fixbug::LoginResponse* response,
+                       const ::test_pkg::LoginRequest* request,
+                       ::test_pkg::LoginResponse* response,
                        ::google::protobuf::Closure* done);
   void GetFriendList(::PROTOBUF_NAMESPACE_ID::RpcController* controller,
-                       const ::fixbug::GetFriendListRequest* request,
-                       ::fixbug::GetFriendListResponse* response,
+                       const ::test_pkg::GetFriendListRequest* request,
+                       ::test_pkg::GetFriendListResponse* response,
                        ::google::protobuf::Closure* done);
  private:
   ::PROTOBUF_NAMESPACE_ID::RpcChannel* channel_;
   bool owns_channel_;
-  GOOGLE_DISALLOW_EVIL_CONSTRUCTORS(UserSeriviceRpc_Stub);
+  GOOGLE_DISALLOW_EVIL_CONSTRUCTORS(UserServiceRpc_Stub);
 };
 
 
@@ -1184,76 +1214,76 @@ class UserSeriviceRpc_Stub : public UserSeriviceRpc {
   #pragma GCC diagnostic push
   #pragma GCC diagnostic ignored "-Wstrict-aliasing"
 #endif  // __GNUC__
-// ResultCode
+// ResponseStatus
 
-// int32 err_code = 1;
-inline void ResultCode::clear_err_code() {
-  err_code_ = 0;
+// int32 code = 1;
+inline void ResponseStatus::clear_code() {
+  code_ = 0;
 }
-inline int32_t ResultCode::_internal_err_code() const {
-  return err_code_;
+inline int32_t ResponseStatus::_internal_code() const {
+  return code_;
 }
-inline int32_t ResultCode::err_code() const {
-  // @@protoc_insertion_point(field_get:fixbug.ResultCode.err_code)
-  return _internal_err_code();
+inline int32_t ResponseStatus::code() const {
+  // @@protoc_insertion_point(field_get:test_pkg.ResponseStatus.code)
+  return _internal_code();
 }
-inline void ResultCode::_internal_set_err_code(int32_t value) {
+inline void ResponseStatus::_internal_set_code(int32_t value) {
   
-  err_code_ = value;
+  code_ = value;
 }
-inline void ResultCode::set_err_code(int32_t value) {
-  _internal_set_err_code(value);
-  // @@protoc_insertion_point(field_set:fixbug.ResultCode.err_code)
+inline void ResponseStatus::set_code(int32_t value) {
+  _internal_set_code(value);
+  // @@protoc_insertion_point(field_set:test_pkg.ResponseStatus.code)
 }
 
-// bytes err_msg = 2;
-inline void ResultCode::clear_err_msg() {
-  err_msg_.ClearToEmpty();
+// string message = 2;
+inline void ResponseStatus::clear_message() {
+  message_.ClearToEmpty();
 }
-inline const std::string& ResultCode::err_msg() const {
-  // @@protoc_insertion_point(field_get:fixbug.ResultCode.err_msg)
-  return _internal_err_msg();
+inline const std::string& ResponseStatus::message() const {
+  // @@protoc_insertion_point(field_get:test_pkg.ResponseStatus.message)
+  return _internal_message();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void ResultCode::set_err_msg(ArgT0&& arg0, ArgT... args) {
+void ResponseStatus::set_message(ArgT0&& arg0, ArgT... args) {
  
- err_msg_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:fixbug.ResultCode.err_msg)
+ message_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:test_pkg.ResponseStatus.message)
 }
-inline std::string* ResultCode::mutable_err_msg() {
-  std::string* _s = _internal_mutable_err_msg();
-  // @@protoc_insertion_point(field_mutable:fixbug.ResultCode.err_msg)
+inline std::string* ResponseStatus::mutable_message() {
+  std::string* _s = _internal_mutable_message();
+  // @@protoc_insertion_point(field_mutable:test_pkg.ResponseStatus.message)
   return _s;
 }
-inline const std::string& ResultCode::_internal_err_msg() const {
-  return err_msg_.Get();
+inline const std::string& ResponseStatus::_internal_message() const {
+  return message_.Get();
 }
-inline void ResultCode::_internal_set_err_msg(const std::string& value) {
+inline void ResponseStatus::_internal_set_message(const std::string& value) {
   
-  err_msg_.Set(value, GetArenaForAllocation());
+  message_.Set(value, GetArenaForAllocation());
 }
-inline std::string* ResultCode::_internal_mutable_err_msg() {
+inline std::string* ResponseStatus::_internal_mutable_message() {
   
-  return err_msg_.Mutable(GetArenaForAllocation());
+  return message_.Mutable(GetArenaForAllocation());
 }
-inline std::string* ResultCode::release_err_msg() {
-  // @@protoc_insertion_point(field_release:fixbug.ResultCode.err_msg)
-  return err_msg_.Release();
+inline std::string* ResponseStatus::release_message() {
+  // @@protoc_insertion_point(field_release:test_pkg.ResponseStatus.message)
+  return message_.Release();
 }
-inline void ResultCode::set_allocated_err_msg(std::string* err_msg) {
-  if (err_msg != nullptr) {
+inline void ResponseStatus::set_allocated_message(std::string* message) {
+  if (message != nullptr) {
     
   } else {
     
   }
-  err_msg_.SetAllocated(err_msg, GetArenaForAllocation());
+  message_.SetAllocated(message, GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (err_msg_.IsDefault()) {
-    err_msg_.Set("", GetArenaForAllocation());
+  if (message_.IsDefault()) {
+    message_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:fixbug.ResultCode.err_msg)
+  // @@protoc_insertion_point(field_set_allocated:test_pkg.ResponseStatus.message)
 }
 
 // -------------------------------------------------------------------
@@ -1268,7 +1298,7 @@ inline uint32_t UserInfo::_internal_id() const {
   return id_;
 }
 inline uint32_t UserInfo::id() const {
-  // @@protoc_insertion_point(field_get:fixbug.UserInfo.id)
+  // @@protoc_insertion_point(field_get:test_pkg.UserInfo.id)
   return _internal_id();
 }
 inline void UserInfo::_internal_set_id(uint32_t value) {
@@ -1277,27 +1307,27 @@ inline void UserInfo::_internal_set_id(uint32_t value) {
 }
 inline void UserInfo::set_id(uint32_t value) {
   _internal_set_id(value);
-  // @@protoc_insertion_point(field_set:fixbug.UserInfo.id)
+  // @@protoc_insertion_point(field_set:test_pkg.UserInfo.id)
 }
 
-// bytes name = 2;
+// string name = 2;
 inline void UserInfo::clear_name() {
   name_.ClearToEmpty();
 }
 inline const std::string& UserInfo::name() const {
-  // @@protoc_insertion_point(field_get:fixbug.UserInfo.name)
+  // @@protoc_insertion_point(field_get:test_pkg.UserInfo.name)
   return _internal_name();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
 void UserInfo::set_name(ArgT0&& arg0, ArgT... args) {
  
- name_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:fixbug.UserInfo.name)
+ name_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:test_pkg.UserInfo.name)
 }
 inline std::string* UserInfo::mutable_name() {
   std::string* _s = _internal_mutable_name();
-  // @@protoc_insertion_point(field_mutable:fixbug.UserInfo.name)
+  // @@protoc_insertion_point(field_mutable:test_pkg.UserInfo.name)
   return _s;
 }
 inline const std::string& UserInfo::_internal_name() const {
@@ -1312,7 +1342,7 @@ inline std::string* UserInfo::_internal_mutable_name() {
   return name_.Mutable(GetArenaForAllocation());
 }
 inline std::string* UserInfo::release_name() {
-  // @@protoc_insertion_point(field_release:fixbug.UserInfo.name)
+  // @@protoc_insertion_point(field_release:test_pkg.UserInfo.name)
   return name_.Release();
 }
 inline void UserInfo::set_allocated_name(std::string* name) {
@@ -1327,7 +1357,7 @@ inline void UserInfo::set_allocated_name(std::string* name) {
     name_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:fixbug.UserInfo.name)
+  // @@protoc_insertion_point(field_set_allocated:test_pkg.UserInfo.name)
 }
 
 // uint32 age = 3;
@@ -1338,7 +1368,7 @@ inline uint32_t UserInfo::_internal_age() const {
   return age_;
 }
 inline uint32_t UserInfo::age() const {
-  // @@protoc_insertion_point(field_get:fixbug.UserInfo.age)
+  // @@protoc_insertion_point(field_get:test_pkg.UserInfo.age)
   return _internal_age();
 }
 inline void UserInfo::_internal_set_age(uint32_t value) {
@@ -1347,146 +1377,146 @@ inline void UserInfo::_internal_set_age(uint32_t value) {
 }
 inline void UserInfo::set_age(uint32_t value) {
   _internal_set_age(value);
-  // @@protoc_insertion_point(field_set:fixbug.UserInfo.age)
+  // @@protoc_insertion_point(field_set:test_pkg.UserInfo.age)
 }
 
-// .fixbug.UserInfo.Sex sex = 4;
+// .test_pkg.UserInfo.Sex sex = 4;
 inline void UserInfo::clear_sex() {
   sex_ = 0;
 }
-inline ::fixbug::UserInfo_Sex UserInfo::_internal_sex() const {
-  return static_cast< ::fixbug::UserInfo_Sex >(sex_);
+inline ::test_pkg::UserInfo_Sex UserInfo::_internal_sex() const {
+  return static_cast< ::test_pkg::UserInfo_Sex >(sex_);
 }
-inline ::fixbug::UserInfo_Sex UserInfo::sex() const {
-  // @@protoc_insertion_point(field_get:fixbug.UserInfo.sex)
+inline ::test_pkg::UserInfo_Sex UserInfo::sex() const {
+  // @@protoc_insertion_point(field_get:test_pkg.UserInfo.sex)
   return _internal_sex();
 }
-inline void UserInfo::_internal_set_sex(::fixbug::UserInfo_Sex value) {
+inline void UserInfo::_internal_set_sex(::test_pkg::UserInfo_Sex value) {
   
   sex_ = value;
 }
-inline void UserInfo::set_sex(::fixbug::UserInfo_Sex value) {
+inline void UserInfo::set_sex(::test_pkg::UserInfo_Sex value) {
   _internal_set_sex(value);
-  // @@protoc_insertion_point(field_set:fixbug.UserInfo.sex)
+  // @@protoc_insertion_point(field_set:test_pkg.UserInfo.sex)
 }
 
 // -------------------------------------------------------------------
 
 // LoginRequest
 
-// uint32 user_id = 1;
-inline void LoginRequest::clear_user_id() {
-  user_id_ = 0u;
+// uint32 uid = 1;
+inline void LoginRequest::clear_uid() {
+  uid_ = 0u;
 }
-inline uint32_t LoginRequest::_internal_user_id() const {
-  return user_id_;
+inline uint32_t LoginRequest::_internal_uid() const {
+  return uid_;
 }
-inline uint32_t LoginRequest::user_id() const {
-  // @@protoc_insertion_point(field_get:fixbug.LoginRequest.user_id)
-  return _internal_user_id();
+inline uint32_t LoginRequest::uid() const {
+  // @@protoc_insertion_point(field_get:test_pkg.LoginRequest.uid)
+  return _internal_uid();
 }
-inline void LoginRequest::_internal_set_user_id(uint32_t value) {
+inline void LoginRequest::_internal_set_uid(uint32_t value) {
   
-  user_id_ = value;
+  uid_ = value;
 }
-inline void LoginRequest::set_user_id(uint32_t value) {
-  _internal_set_user_id(value);
-  // @@protoc_insertion_point(field_set:fixbug.LoginRequest.user_id)
+inline void LoginRequest::set_uid(uint32_t value) {
+  _internal_set_uid(value);
+  // @@protoc_insertion_point(field_set:test_pkg.LoginRequest.uid)
 }
 
-// string pass_word = 2;
-inline void LoginRequest::clear_pass_word() {
-  pass_word_.ClearToEmpty();
+// string password = 2;
+inline void LoginRequest::clear_password() {
+  password_.ClearToEmpty();
 }
-inline const std::string& LoginRequest::pass_word() const {
-  // @@protoc_insertion_point(field_get:fixbug.LoginRequest.pass_word)
-  return _internal_pass_word();
+inline const std::string& LoginRequest::password() const {
+  // @@protoc_insertion_point(field_get:test_pkg.LoginRequest.password)
+  return _internal_password();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void LoginRequest::set_pass_word(ArgT0&& arg0, ArgT... args) {
+void LoginRequest::set_password(ArgT0&& arg0, ArgT... args) {
  
- pass_word_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:fixbug.LoginRequest.pass_word)
+ password_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:test_pkg.LoginRequest.password)
 }
-inline std::string* LoginRequest::mutable_pass_word() {
-  std::string* _s = _internal_mutable_pass_word();
-  // @@protoc_insertion_point(field_mutable:fixbug.LoginRequest.pass_word)
+inline std::string* LoginRequest::mutable_password() {
+  std::string* _s = _internal_mutable_password();
+  // @@protoc_insertion_point(field_mutable:test_pkg.LoginRequest.password)
   return _s;
 }
-inline const std::string& LoginRequest::_internal_pass_word() const {
-  return pass_word_.Get();
+inline const std::string& LoginRequest::_internal_password() const {
+  return password_.Get();
 }
-inline void LoginRequest::_internal_set_pass_word(const std::string& value) {
+inline void LoginRequest::_internal_set_password(const std::string& value) {
   
-  pass_word_.Set(value, GetArenaForAllocation());
+  password_.Set(value, GetArenaForAllocation());
 }
-inline std::string* LoginRequest::_internal_mutable_pass_word() {
+inline std::string* LoginRequest::_internal_mutable_password() {
   
-  return pass_word_.Mutable(GetArenaForAllocation());
+  return password_.Mutable(GetArenaForAllocation());
 }
-inline std::string* LoginRequest::release_pass_word() {
-  // @@protoc_insertion_point(field_release:fixbug.LoginRequest.pass_word)
-  return pass_word_.Release();
+inline std::string* LoginRequest::release_password() {
+  // @@protoc_insertion_point(field_release:test_pkg.LoginRequest.password)
+  return password_.Release();
 }
-inline void LoginRequest::set_allocated_pass_word(std::string* pass_word) {
-  if (pass_word != nullptr) {
+inline void LoginRequest::set_allocated_password(std::string* password) {
+  if (password != nullptr) {
     
   } else {
     
   }
-  pass_word_.SetAllocated(pass_word, GetArenaForAllocation());
+  password_.SetAllocated(password, GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (pass_word_.IsDefault()) {
-    pass_word_.Set("", GetArenaForAllocation());
+  if (password_.IsDefault()) {
+    password_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:fixbug.LoginRequest.pass_word)
+  // @@protoc_insertion_point(field_set_allocated:test_pkg.LoginRequest.password)
 }
 
 // -------------------------------------------------------------------
 
 // LoginResponse
 
-// .fixbug.ResultCode ret_code = 1;
-inline bool LoginResponse::_internal_has_ret_code() const {
-  return this != internal_default_instance() && ret_code_ != nullptr;
+// .test_pkg.ResponseStatus status = 1;
+inline bool LoginResponse::_internal_has_status() const {
+  return this != internal_default_instance() && status_ != nullptr;
 }
-inline bool LoginResponse::has_ret_code() const {
-  return _internal_has_ret_code();
+inline bool LoginResponse::has_status() const {
+  return _internal_has_status();
 }
-inline void LoginResponse::clear_ret_code() {
-  if (GetArenaForAllocation() == nullptr && ret_code_ != nullptr) {
-    delete ret_code_;
+inline void LoginResponse::clear_status() {
+  if (GetArenaForAllocation() == nullptr && status_ != nullptr) {
+    delete status_;
   }
-  ret_code_ = nullptr;
+  status_ = nullptr;
 }
-inline const ::fixbug::ResultCode& LoginResponse::_internal_ret_code() const {
-  const ::fixbug::ResultCode* p = ret_code_;
-  return p != nullptr ? *p : reinterpret_cast<const ::fixbug::ResultCode&>(
-      ::fixbug::_ResultCode_default_instance_);
+inline const ::test_pkg::ResponseStatus& LoginResponse::_internal_status() const {
+  const ::test_pkg::ResponseStatus* p = status_;
+  return p != nullptr ? *p : reinterpret_cast<const ::test_pkg::ResponseStatus&>(
+      ::test_pkg::_ResponseStatus_default_instance_);
 }
-inline const ::fixbug::ResultCode& LoginResponse::ret_code() const {
-  // @@protoc_insertion_point(field_get:fixbug.LoginResponse.ret_code)
-  return _internal_ret_code();
+inline const ::test_pkg::ResponseStatus& LoginResponse::status() const {
+  // @@protoc_insertion_point(field_get:test_pkg.LoginResponse.status)
+  return _internal_status();
 }
-inline void LoginResponse::unsafe_arena_set_allocated_ret_code(
-    ::fixbug::ResultCode* ret_code) {
+inline void LoginResponse::unsafe_arena_set_allocated_status(
+    ::test_pkg::ResponseStatus* status) {
   if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(ret_code_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(status_);
   }
-  ret_code_ = ret_code;
-  if (ret_code) {
+  status_ = status;
+  if (status) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:fixbug.LoginResponse.ret_code)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:test_pkg.LoginResponse.status)
 }
-inline ::fixbug::ResultCode* LoginResponse::release_ret_code() {
+inline ::test_pkg::ResponseStatus* LoginResponse::release_status() {
   
-  ::fixbug::ResultCode* temp = ret_code_;
-  ret_code_ = nullptr;
+  ::test_pkg::ResponseStatus* temp = status_;
+  status_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
   temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
@@ -1498,133 +1528,203 @@ inline ::fixbug::ResultCode* LoginResponse::release_ret_code() {
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::fixbug::ResultCode* LoginResponse::unsafe_arena_release_ret_code() {
-  // @@protoc_insertion_point(field_release:fixbug.LoginResponse.ret_code)
+inline ::test_pkg::ResponseStatus* LoginResponse::unsafe_arena_release_status() {
+  // @@protoc_insertion_point(field_release:test_pkg.LoginResponse.status)
   
-  ::fixbug::ResultCode* temp = ret_code_;
-  ret_code_ = nullptr;
+  ::test_pkg::ResponseStatus* temp = status_;
+  status_ = nullptr;
   return temp;
 }
-inline ::fixbug::ResultCode* LoginResponse::_internal_mutable_ret_code() {
+inline ::test_pkg::ResponseStatus* LoginResponse::_internal_mutable_status() {
   
-  if (ret_code_ == nullptr) {
-    auto* p = CreateMaybeMessage<::fixbug::ResultCode>(GetArenaForAllocation());
-    ret_code_ = p;
+  if (status_ == nullptr) {
+    auto* p = CreateMaybeMessage<::test_pkg::ResponseStatus>(GetArenaForAllocation());
+    status_ = p;
   }
-  return ret_code_;
+  return status_;
 }
-inline ::fixbug::ResultCode* LoginResponse::mutable_ret_code() {
-  ::fixbug::ResultCode* _msg = _internal_mutable_ret_code();
-  // @@protoc_insertion_point(field_mutable:fixbug.LoginResponse.ret_code)
+inline ::test_pkg::ResponseStatus* LoginResponse::mutable_status() {
+  ::test_pkg::ResponseStatus* _msg = _internal_mutable_status();
+  // @@protoc_insertion_point(field_mutable:test_pkg.LoginResponse.status)
   return _msg;
 }
-inline void LoginResponse::set_allocated_ret_code(::fixbug::ResultCode* ret_code) {
+inline void LoginResponse::set_allocated_status(::test_pkg::ResponseStatus* status) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
-    delete ret_code_;
+    delete status_;
   }
-  if (ret_code) {
+  if (status) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(ret_code);
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(status);
     if (message_arena != submessage_arena) {
-      ret_code = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, ret_code, submessage_arena);
+      status = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, status, submessage_arena);
     }
     
   } else {
     
   }
-  ret_code_ = ret_code;
-  // @@protoc_insertion_point(field_set_allocated:fixbug.LoginResponse.ret_code)
+  status_ = status;
+  // @@protoc_insertion_point(field_set_allocated:test_pkg.LoginResponse.status)
 }
 
-// bool success = 2;
-inline void LoginResponse::clear_success() {
-  success_ = false;
+// string session_token = 2;
+inline void LoginResponse::clear_session_token() {
+  session_token_.ClearToEmpty();
 }
-inline bool LoginResponse::_internal_success() const {
-  return success_;
+inline const std::string& LoginResponse::session_token() const {
+  // @@protoc_insertion_point(field_get:test_pkg.LoginResponse.session_token)
+  return _internal_session_token();
 }
-inline bool LoginResponse::success() const {
-  // @@protoc_insertion_point(field_get:fixbug.LoginResponse.success)
-  return _internal_success();
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void LoginResponse::set_session_token(ArgT0&& arg0, ArgT... args) {
+ 
+ session_token_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:test_pkg.LoginResponse.session_token)
 }
-inline void LoginResponse::_internal_set_success(bool value) {
+inline std::string* LoginResponse::mutable_session_token() {
+  std::string* _s = _internal_mutable_session_token();
+  // @@protoc_insertion_point(field_mutable:test_pkg.LoginResponse.session_token)
+  return _s;
+}
+inline const std::string& LoginResponse::_internal_session_token() const {
+  return session_token_.Get();
+}
+inline void LoginResponse::_internal_set_session_token(const std::string& value) {
   
-  success_ = value;
+  session_token_.Set(value, GetArenaForAllocation());
 }
-inline void LoginResponse::set_success(bool value) {
-  _internal_set_success(value);
-  // @@protoc_insertion_point(field_set:fixbug.LoginResponse.success)
+inline std::string* LoginResponse::_internal_mutable_session_token() {
+  
+  return session_token_.Mutable(GetArenaForAllocation());
+}
+inline std::string* LoginResponse::release_session_token() {
+  // @@protoc_insertion_point(field_release:test_pkg.LoginResponse.session_token)
+  return session_token_.Release();
+}
+inline void LoginResponse::set_allocated_session_token(std::string* session_token) {
+  if (session_token != nullptr) {
+    
+  } else {
+    
+  }
+  session_token_.SetAllocated(session_token, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (session_token_.IsDefault()) {
+    session_token_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:test_pkg.LoginResponse.session_token)
 }
 
 // -------------------------------------------------------------------
 
 // GetFriendListRequest
 
-// uint32 user_id = 1;
-inline void GetFriendListRequest::clear_user_id() {
-  user_id_ = 0u;
+// uint32 uid = 1;
+inline void GetFriendListRequest::clear_uid() {
+  uid_ = 0u;
 }
-inline uint32_t GetFriendListRequest::_internal_user_id() const {
-  return user_id_;
+inline uint32_t GetFriendListRequest::_internal_uid() const {
+  return uid_;
 }
-inline uint32_t GetFriendListRequest::user_id() const {
-  // @@protoc_insertion_point(field_get:fixbug.GetFriendListRequest.user_id)
-  return _internal_user_id();
+inline uint32_t GetFriendListRequest::uid() const {
+  // @@protoc_insertion_point(field_get:test_pkg.GetFriendListRequest.uid)
+  return _internal_uid();
 }
-inline void GetFriendListRequest::_internal_set_user_id(uint32_t value) {
+inline void GetFriendListRequest::_internal_set_uid(uint32_t value) {
   
-  user_id_ = value;
+  uid_ = value;
 }
-inline void GetFriendListRequest::set_user_id(uint32_t value) {
-  _internal_set_user_id(value);
-  // @@protoc_insertion_point(field_set:fixbug.GetFriendListRequest.user_id)
+inline void GetFriendListRequest::set_uid(uint32_t value) {
+  _internal_set_uid(value);
+  // @@protoc_insertion_point(field_set:test_pkg.GetFriendListRequest.uid)
+}
+
+// uint32 page = 2;
+inline void GetFriendListRequest::clear_page() {
+  page_ = 0u;
+}
+inline uint32_t GetFriendListRequest::_internal_page() const {
+  return page_;
+}
+inline uint32_t GetFriendListRequest::page() const {
+  // @@protoc_insertion_point(field_get:test_pkg.GetFriendListRequest.page)
+  return _internal_page();
+}
+inline void GetFriendListRequest::_internal_set_page(uint32_t value) {
+  
+  page_ = value;
+}
+inline void GetFriendListRequest::set_page(uint32_t value) {
+  _internal_set_page(value);
+  // @@protoc_insertion_point(field_set:test_pkg.GetFriendListRequest.page)
+}
+
+// uint32 page_size = 3;
+inline void GetFriendListRequest::clear_page_size() {
+  page_size_ = 0u;
+}
+inline uint32_t GetFriendListRequest::_internal_page_size() const {
+  return page_size_;
+}
+inline uint32_t GetFriendListRequest::page_size() const {
+  // @@protoc_insertion_point(field_get:test_pkg.GetFriendListRequest.page_size)
+  return _internal_page_size();
+}
+inline void GetFriendListRequest::_internal_set_page_size(uint32_t value) {
+  
+  page_size_ = value;
+}
+inline void GetFriendListRequest::set_page_size(uint32_t value) {
+  _internal_set_page_size(value);
+  // @@protoc_insertion_point(field_set:test_pkg.GetFriendListRequest.page_size)
 }
 
 // -------------------------------------------------------------------
 
 // GetFriendListResponse
 
-// .fixbug.ResultCode ret_code = 1;
-inline bool GetFriendListResponse::_internal_has_ret_code() const {
-  return this != internal_default_instance() && ret_code_ != nullptr;
+// .test_pkg.ResponseStatus status = 1;
+inline bool GetFriendListResponse::_internal_has_status() const {
+  return this != internal_default_instance() && status_ != nullptr;
 }
-inline bool GetFriendListResponse::has_ret_code() const {
-  return _internal_has_ret_code();
+inline bool GetFriendListResponse::has_status() const {
+  return _internal_has_status();
 }
-inline void GetFriendListResponse::clear_ret_code() {
-  if (GetArenaForAllocation() == nullptr && ret_code_ != nullptr) {
-    delete ret_code_;
+inline void GetFriendListResponse::clear_status() {
+  if (GetArenaForAllocation() == nullptr && status_ != nullptr) {
+    delete status_;
   }
-  ret_code_ = nullptr;
+  status_ = nullptr;
 }
-inline const ::fixbug::ResultCode& GetFriendListResponse::_internal_ret_code() const {
-  const ::fixbug::ResultCode* p = ret_code_;
-  return p != nullptr ? *p : reinterpret_cast<const ::fixbug::ResultCode&>(
-      ::fixbug::_ResultCode_default_instance_);
+inline const ::test_pkg::ResponseStatus& GetFriendListResponse::_internal_status() const {
+  const ::test_pkg::ResponseStatus* p = status_;
+  return p != nullptr ? *p : reinterpret_cast<const ::test_pkg::ResponseStatus&>(
+      ::test_pkg::_ResponseStatus_default_instance_);
 }
-inline const ::fixbug::ResultCode& GetFriendListResponse::ret_code() const {
-  // @@protoc_insertion_point(field_get:fixbug.GetFriendListResponse.ret_code)
-  return _internal_ret_code();
+inline const ::test_pkg::ResponseStatus& GetFriendListResponse::status() const {
+  // @@protoc_insertion_point(field_get:test_pkg.GetFriendListResponse.status)
+  return _internal_status();
 }
-inline void GetFriendListResponse::unsafe_arena_set_allocated_ret_code(
-    ::fixbug::ResultCode* ret_code) {
+inline void GetFriendListResponse::unsafe_arena_set_allocated_status(
+    ::test_pkg::ResponseStatus* status) {
   if (GetArenaForAllocation() == nullptr) {
-    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(ret_code_);
+    delete reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(status_);
   }
-  ret_code_ = ret_code;
-  if (ret_code) {
+  status_ = status;
+  if (status) {
     
   } else {
     
   }
-  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:fixbug.GetFriendListResponse.ret_code)
+  // @@protoc_insertion_point(field_unsafe_arena_set_allocated:test_pkg.GetFriendListResponse.status)
 }
-inline ::fixbug::ResultCode* GetFriendListResponse::release_ret_code() {
+inline ::test_pkg::ResponseStatus* GetFriendListResponse::release_status() {
   
-  ::fixbug::ResultCode* temp = ret_code_;
-  ret_code_ = nullptr;
+  ::test_pkg::ResponseStatus* temp = status_;
+  status_ = nullptr;
 #ifdef PROTOBUF_FORCE_COPY_IN_RELEASE
   auto* old =  reinterpret_cast<::PROTOBUF_NAMESPACE_ID::MessageLite*>(temp);
   temp = ::PROTOBUF_NAMESPACE_ID::internal::DuplicateIfNonNull(temp);
@@ -1636,84 +1736,84 @@ inline ::fixbug::ResultCode* GetFriendListResponse::release_ret_code() {
 #endif  // !PROTOBUF_FORCE_COPY_IN_RELEASE
   return temp;
 }
-inline ::fixbug::ResultCode* GetFriendListResponse::unsafe_arena_release_ret_code() {
-  // @@protoc_insertion_point(field_release:fixbug.GetFriendListResponse.ret_code)
+inline ::test_pkg::ResponseStatus* GetFriendListResponse::unsafe_arena_release_status() {
+  // @@protoc_insertion_point(field_release:test_pkg.GetFriendListResponse.status)
   
-  ::fixbug::ResultCode* temp = ret_code_;
-  ret_code_ = nullptr;
+  ::test_pkg::ResponseStatus* temp = status_;
+  status_ = nullptr;
   return temp;
 }
-inline ::fixbug::ResultCode* GetFriendListResponse::_internal_mutable_ret_code() {
+inline ::test_pkg::ResponseStatus* GetFriendListResponse::_internal_mutable_status() {
   
-  if (ret_code_ == nullptr) {
-    auto* p = CreateMaybeMessage<::fixbug::ResultCode>(GetArenaForAllocation());
-    ret_code_ = p;
+  if (status_ == nullptr) {
+    auto* p = CreateMaybeMessage<::test_pkg::ResponseStatus>(GetArenaForAllocation());
+    status_ = p;
   }
-  return ret_code_;
+  return status_;
 }
-inline ::fixbug::ResultCode* GetFriendListResponse::mutable_ret_code() {
-  ::fixbug::ResultCode* _msg = _internal_mutable_ret_code();
-  // @@protoc_insertion_point(field_mutable:fixbug.GetFriendListResponse.ret_code)
+inline ::test_pkg::ResponseStatus* GetFriendListResponse::mutable_status() {
+  ::test_pkg::ResponseStatus* _msg = _internal_mutable_status();
+  // @@protoc_insertion_point(field_mutable:test_pkg.GetFriendListResponse.status)
   return _msg;
 }
-inline void GetFriendListResponse::set_allocated_ret_code(::fixbug::ResultCode* ret_code) {
+inline void GetFriendListResponse::set_allocated_status(::test_pkg::ResponseStatus* status) {
   ::PROTOBUF_NAMESPACE_ID::Arena* message_arena = GetArenaForAllocation();
   if (message_arena == nullptr) {
-    delete ret_code_;
+    delete status_;
   }
-  if (ret_code) {
+  if (status) {
     ::PROTOBUF_NAMESPACE_ID::Arena* submessage_arena =
-        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(ret_code);
+        ::PROTOBUF_NAMESPACE_ID::Arena::InternalGetOwningArena(status);
     if (message_arena != submessage_arena) {
-      ret_code = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
-          message_arena, ret_code, submessage_arena);
+      status = ::PROTOBUF_NAMESPACE_ID::internal::GetOwnedMessage(
+          message_arena, status, submessage_arena);
     }
     
   } else {
     
   }
-  ret_code_ = ret_code;
-  // @@protoc_insertion_point(field_set_allocated:fixbug.GetFriendListResponse.ret_code)
+  status_ = status;
+  // @@protoc_insertion_point(field_set_allocated:test_pkg.GetFriendListResponse.status)
 }
 
-// repeated .fixbug.UserInfo friend_list = 2;
-inline int GetFriendListResponse::_internal_friend_list_size() const {
-  return friend_list_.size();
+// repeated .test_pkg.UserInfo friends = 2;
+inline int GetFriendListResponse::_internal_friends_size() const {
+  return friends_.size();
 }
-inline int GetFriendListResponse::friend_list_size() const {
-  return _internal_friend_list_size();
+inline int GetFriendListResponse::friends_size() const {
+  return _internal_friends_size();
 }
-inline void GetFriendListResponse::clear_friend_list() {
-  friend_list_.Clear();
+inline void GetFriendListResponse::clear_friends() {
+  friends_.Clear();
 }
-inline ::fixbug::UserInfo* GetFriendListResponse::mutable_friend_list(int index) {
-  // @@protoc_insertion_point(field_mutable:fixbug.GetFriendListResponse.friend_list)
-  return friend_list_.Mutable(index);
+inline ::test_pkg::UserInfo* GetFriendListResponse::mutable_friends(int index) {
+  // @@protoc_insertion_point(field_mutable:test_pkg.GetFriendListResponse.friends)
+  return friends_.Mutable(index);
 }
-inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::fixbug::UserInfo >*
-GetFriendListResponse::mutable_friend_list() {
-  // @@protoc_insertion_point(field_mutable_list:fixbug.GetFriendListResponse.friend_list)
-  return &friend_list_;
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::test_pkg::UserInfo >*
+GetFriendListResponse::mutable_friends() {
+  // @@protoc_insertion_point(field_mutable_list:test_pkg.GetFriendListResponse.friends)
+  return &friends_;
 }
-inline const ::fixbug::UserInfo& GetFriendListResponse::_internal_friend_list(int index) const {
-  return friend_list_.Get(index);
+inline const ::test_pkg::UserInfo& GetFriendListResponse::_internal_friends(int index) const {
+  return friends_.Get(index);
 }
-inline const ::fixbug::UserInfo& GetFriendListResponse::friend_list(int index) const {
-  // @@protoc_insertion_point(field_get:fixbug.GetFriendListResponse.friend_list)
-  return _internal_friend_list(index);
+inline const ::test_pkg::UserInfo& GetFriendListResponse::friends(int index) const {
+  // @@protoc_insertion_point(field_get:test_pkg.GetFriendListResponse.friends)
+  return _internal_friends(index);
 }
-inline ::fixbug::UserInfo* GetFriendListResponse::_internal_add_friend_list() {
-  return friend_list_.Add();
+inline ::test_pkg::UserInfo* GetFriendListResponse::_internal_add_friends() {
+  return friends_.Add();
 }
-inline ::fixbug::UserInfo* GetFriendListResponse::add_friend_list() {
-  ::fixbug::UserInfo* _add = _internal_add_friend_list();
-  // @@protoc_insertion_point(field_add:fixbug.GetFriendListResponse.friend_list)
+inline ::test_pkg::UserInfo* GetFriendListResponse::add_friends() {
+  ::test_pkg::UserInfo* _add = _internal_add_friends();
+  // @@protoc_insertion_point(field_add:test_pkg.GetFriendListResponse.friends)
   return _add;
 }
-inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::fixbug::UserInfo >&
-GetFriendListResponse::friend_list() const {
-  // @@protoc_insertion_point(field_list:fixbug.GetFriendListResponse.friend_list)
-  return friend_list_;
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::test_pkg::UserInfo >&
+GetFriendListResponse::friends() const {
+  // @@protoc_insertion_point(field_list:test_pkg.GetFriendListResponse.friends)
+  return friends_;
 }
 
 #ifdef __GNUC__
@@ -1732,14 +1832,14 @@ GetFriendListResponse::friend_list() const {
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace fixbug
+}  // namespace test_pkg
 
 PROTOBUF_NAMESPACE_OPEN
 
-template <> struct is_proto_enum< ::fixbug::UserInfo_Sex> : ::std::true_type {};
+template <> struct is_proto_enum< ::test_pkg::UserInfo_Sex> : ::std::true_type {};
 template <>
-inline const EnumDescriptor* GetEnumDescriptor< ::fixbug::UserInfo_Sex>() {
-  return ::fixbug::UserInfo_Sex_descriptor();
+inline const EnumDescriptor* GetEnumDescriptor< ::test_pkg::UserInfo_Sex>() {
+  return ::test_pkg::UserInfo_Sex_descriptor();
 }
 
 PROTOBUF_NAMESPACE_CLOSE

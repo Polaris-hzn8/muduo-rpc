@@ -4,13 +4,13 @@
 
 #include "pbgen/test.pb.h"
 
-using namespace fixbug;
+using namespace test_pkg;
 
 void test1() {
     // 序列化
     LoginRequest req;
-    req.set_user_id(10001);
-    req.set_pass_word("1234560");
+    req.set_uid(10001);
+    req.set_password("1234560");
     std::string str_req;
     if (req.SerializeToString(&str_req)) {
         std::cout << str_req << std::endl;
@@ -19,38 +19,38 @@ void test1() {
     // 反序列化
     LoginRequest reqX;
     if (reqX.ParseFromString(str_req)) {
-        std::cout << reqX.user_id() << std::endl;
-        std::cout << reqX.pass_word() << std::endl;
+        std::cout << reqX.uid() << std::endl;
+        std::cout << reqX.password() << std::endl;
     }
 
     // 登陆请求响应
     LoginResponse rsp;
-    ResultCode* rc = rsp.mutable_ret_code();
-    rc->set_err_code(0);
-    rc->set_err_msg("login_succeed.");
+    ResponseStatus* status = rsp.mutable_status();
+    status->set_code(0);
+    status->set_message("login_succeed.");
 }
 
 void test2() {
     // 好友列表获取响应
     GetFriendListResponse rsp;
-    ResultCode* rc = rsp.mutable_ret_code();
-    rc->set_err_code(0);
-    rc->set_err_msg("friend list succeed.");
+    ResponseStatus* status = rsp.mutable_status();
+    status->set_code(0);
+    status->set_message("friend list succeed.");
 
     UserInfo* userInfo = nullptr;
-    userInfo = rsp.add_friend_list();
+    userInfo = rsp.add_friends();
     userInfo->set_id(10001);
     userInfo->set_name("luochenhao");
     userInfo->set_age(25);
-    userInfo->set_sex(UserInfo::MAN);
+    userInfo->set_sex(UserInfo::MALE);
 
-    userInfo = rsp.add_friend_list();
+    userInfo = rsp.add_friends();
     userInfo->set_id(10002);
     userInfo->set_name("lch");
     userInfo->set_age(27);
-    userInfo->set_sex(UserInfo::MAN);
+    userInfo->set_sex(UserInfo::MALE);
     
-    std::cout << rsp.friend_list_size() << std::endl;
+    std::cout << rsp.friends_size() << std::endl;
 }
 
 int main() {
