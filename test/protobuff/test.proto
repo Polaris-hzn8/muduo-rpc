@@ -1,41 +1,57 @@
 syntax = "proto3";
 
-package fixbug;
+package test_pkg;
 option cc_generic_services = true;
+option optimize_for = SPEED;
+
 /////////////////////////////////////////////////////////
-message ResultCode {
-    int32 err_code = 1;
-    bytes err_msg = 2;
+// General response status (0 = OK).
+message ResponseStatus {
+    int32 code = 1; // 0 means success
+    string message = 2; // human-readable message
 }
+
+// User information returned by services.
 message UserInfo {
     uint32 id = 1;
-    bytes name = 2;
+    string name = 2; // use string for textual fields
     uint32 age = 3;
     enum Sex {
-        MAN = 0;
-        WOMAN = 1;
+        SEX_UNSPECIFIED = 0;
+        MALE = 1;
+        FEMALE = 2;
     }
     Sex sex = 4;
+    // reserve a range for future fields
+    reserved 1000 to 1999;
 }
 
 /////////////////////////////////////////////////////////
 message LoginRequest {
-    uint32 user_id = 1;
-    string pass_word = 2;
+    uint32 uid = 1;
+    string password = 2; // normalized field name
 }
+
 message LoginResponse {
-    ResultCode ret_code = 1;
-    bool success = 2;
+    ResponseStatus status = 1; // structured status
+    string session_token = 2; // optional token when success
 }
+
 message GetFriendListRequest {
-    uint32 user_id = 1;
+    uint32 uid = 1;
+    uint32 page = 2; // pagination support
+    uint32 page_size = 3;
 }
+
 message GetFriendListResponse {
-    ResultCode ret_code = 1;
-    repeated UserInfo friend_list = 2;
+    ResponseStatus status = 1;
+    repeated UserInfo friends = 2; // shorter field name
 }
-// 描述rpc方法类型
-service UserSeriviceRpc {
-    rpc Login(LoginRequest) returns(LoginResponse);
-    rpc GetFriendList(GetFriendListRequest) returns(GetFriendListResponse);
+
+// 服务定义
+service UserServiceRpc {
+    // RPC方法定义
+    rpc Login(LoginRequest) returns (LoginResponse);
+    // RPC方法定义
+    rpc GetFriendList(GetFriendListRequest) returns (GetFriendListResponse);
 }

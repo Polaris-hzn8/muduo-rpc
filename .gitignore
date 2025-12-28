@@ -35,6 +35,6 @@
 .vscode/
 
 # cmake
+lib/
 bin/
 build/
-
