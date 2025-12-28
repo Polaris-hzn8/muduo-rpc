@@ -7,14 +7,15 @@
 
 #pragma once
 
+#include "mdrpc_config.h"
+
 class MdrpcApplication {
 public:
-    virtual ~MdrpcApplication();
     static MdrpcApplication& GetInstance();
     static void Init(int argc, char** argv);
 
 private:
-    MdrpcApplication();
+    MdrpcApplication() = default;
     MdrpcApplication(const MdrpcApplication&) = delete;
     MdrpcApplication(MdrpcApplication&&) = delete;
     MdrpcApplication& operator=(const MdrpcApplication&) = delete;
