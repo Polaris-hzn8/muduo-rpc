@@ -41,7 +41,6 @@ private:
 private:
     // 存储注册成功的服务对象和服务方法
     std::unordered_map<std::string, ServiceInfo> _service_map;
-
     // eventLoop对象(muduo库提供)
     muduo::net::EventLoop _event_loop;
 };

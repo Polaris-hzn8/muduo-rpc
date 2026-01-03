@@ -5,10 +5,12 @@
 * @brief: 
 **/
 
+#include <string>
 #include <iostream>
 #include <functional>
 #include "mdrpc_provider.h"
 #include "mdrpc_application.h"
+#include "rpcheader.pb.h"
 
 // 注册发布rpc服务方法
 void MdrpcProvider::RegisterService(google::protobuf::Service* service) {
@@ -69,15 +71,87 @@ void MdrpcProvider::Run() {
     _event_loop.loop();
 }
 
+// 短链接请求
 void MdrpcProvider::OnConnection(const muduo::net::TcpConnectionPtr& conn) {
+    if (!conn->connected()) {
+        // 断开连接
+        conn->shutdown();
+    } else {
+        // 新连接建立
+        std::cout << "New connection established: " << conn->peerAddress().toIpPort() << std::endl;
 
+
+    }
 }
 
+// 长链接请求
+// 处理rpc请求的反序列化、调用服务方法、序列化响应等逻辑
+// 在框架内部 RpcProvider和RpcConsumer协商好通信协议
+// header_size(4) + header_data(?) + args_data(?)
+// service_name_size(4) + method_name_size(4) + args_size(?)
 void MdrpcProvider::OnMessage(
     const muduo::net::TcpConnectionPtr& conn,
     muduo::net::Buffer* buffer,
     muduo::Timestamp receive_time) {
+    //////////////////////////////////////////////////////////////////////////////////
+    // 读取客户端发送的rpc请求消息
+    std::string request = buffer->retrieveAllAsString();
+    // 读取前4个字节获取header_size
+    uint32_t header_size = 0;
+    std::memcpy(&header_size, request.data(), 4);
+    // 读取header_size大小的header_data数据
+    std::string header_data = request.substr(4, header_size);
+
+    // 反序列化header_data数据
+    mdrpc_pkg::RpcHeader rpc_header;
+    if (!rpc_header.ParseFromString(header_data)) {
+        std::cerr << "Failed to parse RpcHeader." << std::endl;
+        return;
+    }
+    // 读取args_size大小的args_data数据
+    std::string service_name = rpc_header.service_name();
+    std::string method_name = rpc_header.method_name();
+    uint32_t args_size = rpc_header.args_size();
+    std::string args_data = request.substr(4 + header_size, args_size);
+    std::cout << "Received RPC request for service: " << service_name
+              << ", method: " << method_name
+              << ", args_size: " << args_size << std::endl;
     
-    
-    
+    //////////////////////////////////////////////////////////////////////////////////
+    // 查找服务对象和方法描述符
+    auto service_it = _service_map.find(service_name);
+    if (service_it == _service_map.end()) {
+        std::cerr << "Service not found: " << service_name << std::endl;
+        return;
+    }
+    ServiceInfo& service_info = service_it->second;
+    auto method_it = service_info._method_map.find(method_name);
+    if (method_it == service_info._method_map.end()) {
+        std::cerr << "Method not found: " << method_name << " for service: " << service_name << std::endl;
+        return;
+    }
+
+    const google::protobuf::MethodDescriptor* method_descriptor = method_it->second;
+    google::protobuf::Service* service = service_info._service;
+    google::protobuf::Message* request_msg = service->GetRequestPrototype(method_descriptor).New();
+    google::protobuf::Message* response_msg = service->GetResponsePrototype(method_descriptor).New();
+
+    // 反序列化请求消息
+    if (!request_msg->ParseFromString(args_data)) {
+        std::cerr << "Failed to parse request message." << std::endl;
+        return;
+    }
+
+    //////////////////////////////////////////////////////////////////////////////////
+    // 调用服务方法
+    service->CallMethod(method_descriptor, nullptr, request_msg, response_msg, nullptr);
+
+    //////////////////////////////////////////////////////////////////////////////////
+    // 序列化响应消息
+    std::string response_data;
+    if (!response_msg->SerializeToString(&response_data)) {
+        std::cerr << "Failed to serialize response message." << std::endl;
+        return;
+    }
+    conn->send(response_data);
 }

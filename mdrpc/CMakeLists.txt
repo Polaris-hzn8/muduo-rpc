@@ -5,7 +5,10 @@ set(EXECUTABLE_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/bin)
 set(LIBRARY_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/lib)
 
 # 收集源文件
-file(GLOB SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cc")
+file(GLOB SOURCES
+    "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cc"
+    "${CMAKE_CURRENT_SOURCE_DIR}/pb/pbgen/*.cc"
+)
 
 # 创建共享库（动态库）
 # add_library(mdrpc SHARED ${SOURCES})
@@ -15,6 +18,7 @@ add_library(mdrpc STATIC ${SOURCES})
 # 设置包含目录（PUBLIC 使得链接此库的目标自动获得头文件路径）
 target_include_directories(mdrpc PUBLIC
     ${CMAKE_CURRENT_SOURCE_DIR}/include
+    ${CMAKE_CURRENT_SOURCE_DIR}/pb/pbgen
     /opt/protobuf3/include
 )
 
